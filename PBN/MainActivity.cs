@@ -1,5 +1,6 @@
 ﻿using System;
 using Android.App;
+using Android.Content;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
@@ -77,21 +78,10 @@ namespace PBN
         {
             int id = item.ItemId;
 
-            if (id == Resource.Id.nav_casa)
+            if (id == Resource.Id.nav_mrutas)
             {
-                // Handle the camera action
-            }
-            else if (id == Resource.Id.nav_trabajo)
-            {
-
-            }
-            else if (id == Resource.Id.nav_favorito)
-            {
-
-            }
-            else if (id == Resource.Id.nav_mrutas)
-            {
-
+                var res = new Intent(this, typeof(BusActivity));
+                StartActivity(res);
             }
             else if (id == Resource.Id.nav_comentarios)
             {

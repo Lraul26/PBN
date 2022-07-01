@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/background"
+    android:padding="15.0dp"
+    android:layout_height="match_parent">
+    <TextView
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:text=""
+        android:textColor="@android:color/white"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="90.0dp"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:id="@+id/tvtitulo" />
+    <ListView
+        android:cacheColorHint="@android:color/white"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lvdtbus" />
+    <Button
+        android:textColor="@android:color/white"
+        android:background="@color/background1"
+        android:text="Agregar"
+        android:layout_width="125.0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/button1" />
+
+</LinearLayout>

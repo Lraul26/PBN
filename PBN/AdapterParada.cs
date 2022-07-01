@@ -8,14 +8,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+
 namespace PBN
 {
-    internal class AdapterBus : BaseAdapter
+    internal class AdapterParada : BaseAdapter
     {
         Activity context;
-        List<AutoBuces> lista;
+        List<Parada> lista;
 
-        public AdapterBus(Activity context, List<AutoBuces> lista)
+        public AdapterParada(Activity context, List<Parada> lista)
         {
             this.context = context;
             this.lista = lista;
@@ -32,7 +33,6 @@ namespace PBN
         {
             return position;
         }
-
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
             //elemento devuelto
@@ -40,9 +40,8 @@ namespace PBN
             //Definimos el formato fila
             View view = convertView;
             if (view == null)
-                view = context.LayoutInflater.Inflate(Android.Resource.Layout.SimpleListItem2, null);
-            view.FindViewById<TextView>(Android.Resource.Id.Text1).Text = "Ruta " + item.NumeroAuntoBus.ToString();
-            view.FindViewById<TextView>(Android.Resource.Id.Text2).Text = "Total de Paradas " + CsGlobal.Parada.Where(x => x.Idbus == item.IdAutoBus).Count();
+                view = context.LayoutInflater.Inflate(Android.Resource.Layout.SimpleListItem1, null);
+            view.FindViewById<TextView>(Android.Resource.Id.Text1).Text = item.NombrePar;
             return view;
         }
     }

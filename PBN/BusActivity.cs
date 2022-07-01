@@ -18,10 +18,20 @@ namespace PBN
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.content_main);
+            SetContentView(Resource.Layout.ActivityPrincipal);
 
             lvbus = FindViewById<ListView>(Resource.Id.lvbus);
             lvbus.Adapter = new AdapterBus(this, CsGlobal.Autobuces);
+
+            lvbus.ItemClick += Lvbus_ItemClick;
+        }
+
+        private void Lvbus_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            Intent i = new Intent(this, typeof(DetalleBusActivity));
+            AutoBuces bus = CsGlobal.Autobuces[e.Position];
+            i.PutExtra("id", bus.IdAutoBus);
+            StartActivity(i);
         }
     }
 }

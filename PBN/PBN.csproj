@@ -62,8 +62,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdapterBus.cs" />
+    <Compile Include="AdapterParada.cs" />
     <Compile Include="BusActivity.cs" />
     <Compile Include="CsGlobal.cs" />
+    <Compile Include="DetalleBusActivity.cs" />
+    <Compile Include="DetalleParadaActivity.cs" />
     <Compile Include="LoginActivity.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="RegistrarActivity.cs" />
@@ -141,6 +144,16 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\ActivityPrincipal.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\ActivityDetalleBusxml.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\ActivityDetalleParada.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
