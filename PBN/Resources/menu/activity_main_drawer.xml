@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item android:title="Mis Lugares">
+        <menu>
+            <item
+                android:id="@+id/nav_casa"
+                android:title="Fijar Casa" />
+            <item
+                android:id="@+id/nav_trabajo"
+                android:title="Fijar Trabajo" />
+		<item
+                android:id="@+id/nav_favorito"
+                android:title="Añadir Favorito" />
+        </menu>
+    </item>
+
+    <item android:title="Transporte">
+        <menu>
+            <item
+                android:id="@+id/nav_mrutas"
+                android:title="Mostrar Rutas" />
+		 <item
+                android:id="@+id/nav_comentarios"
+                android:title="Comentarios" />
+        </menu>
+    </item>
+	
+	<item android:title="Configuraciones">
+        <menu>
+            <item
+                android:id="@+id/nav_tema"
+                android:title="Tema" />
+            <item
+                android:id="@+id/nav_notificacion"
+                android:title="Notificaciones" />
+        </menu>
+    </item>
+	
+	<item android:title="¿Te gusta Proxi Bus Nic?">
+        <menu>
+            <item
+                android:id="@+id/nav_valorar"
+                android:title="Valoranos" />
+            <item
+                android:id="@+id/nav_compartir"
+                android:title="Comparte" />
+        </menu>
+    </item>
+
+</menu>

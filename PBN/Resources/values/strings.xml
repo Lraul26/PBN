@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">PBN</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_settings">Settings</string>
+
+	
+	<string name="txt1">E-mail</string>
+	<string name="txt2">Contraseña</string>
+	<string name="txt3">LOGIN</string>
+	<string name="txt4">¿Aún no tienes cuenta?</string>
+	<string name="txt5">REGISTRO</string>
+	<string name="txt6">Nueva Contraseña</string>
+	<string name="txt7">Repetir Contraseña</string>
+	<string name="txt8">Proxi Bus Nic</string>
+	<string name="txt9">proxibusnic@pbn.com</string>
+
+
+
+	<string name="btn1">Entrar</string>
+	<string name="btn2">Registrarse</string>
+	<string name="btn3">INICIAR SESIÓN</string>
+
+				  
+</resources>
