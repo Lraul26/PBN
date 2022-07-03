@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:p4="http://xamarin.com/mono/android/designer"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="604.5dp"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView1">
+        <TableLayout
+            android:collapseColumns="**"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tableLayout1">
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/tableRow1">
+                <TextView
+                    android:text=""
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:layout_width="256.5dp"
+                    android:layout_height="73.5dp"
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:id="@+id/textView1" />
+                <ImageView
+                    android:contentDescription=""
+                    android:src="@drawable/bus"
+                    android:layout_width="140.5dp"
+                    android:layout_height="73.5dp"
+                    android:id="@+id/imageView1" />
+            </TableRow>
+        </TableLayout>
+    </ScrollView>
+</LinearLayout>

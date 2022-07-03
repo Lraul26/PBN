@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+	android:background="@color/background"
+    android:padding="15.0dp"
+    android:layout_height="match_parent">
+
+<TextView
+		android:textColor="@android:color/white"
+		android:text="Agregar una Parada"
+		android:textStyle="bold"
+		android:textAlignment="center"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:layout_width="match_parent"
+		android:layout_height="52.5dp"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:id="@+id/textView1" />
+
+
+	<TextView
+		android:textColor="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Descripcion"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+		android:id="@+id/textView2" />
+	
+		<EditText
+		android:textColor="@android:color/white"
+		android:layout_width="500.0dp"
+		android:layout_height="wrap_content"
+		android:textAlignment="center"
+		android:id="@+id/editDescrip" />
+		<TextView
+		android:textColor="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Alias"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+		android:id="@+id/textView2" />
+	<EditText
+		android:textColor="@android:color/white"
+		android:layout_width="580.0dp"
+		android:layout_height="wrap_content"
+		
+		android:textAlignment="center"
+		android:id="@+id/editAlias" />
+		<TextView
+		android:textColor="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Foto"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+		android:id="@+id/textView3" />
+	<ImageView
+		android:src="@android:drawable/ic_menu_gallery"
+		android:layout_width="match_parent"
+		android:layout_height="113.0dp"
+		android:id="@+id/imageView1" />
+	<Button
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:textStyle="bold"
+		android:gravity="center"
+		android:background="@color/background1"
+		android:textColor="@android:color/white"
+		android:text="Guardar"
+		android:id="@+id/GuardarP" />
+</LinearLayout>

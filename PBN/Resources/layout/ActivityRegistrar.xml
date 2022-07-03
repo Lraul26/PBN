@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:p4="http://xamarin.com/mono/android/designer"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:background="@color/background"
     android:padding="15.0dp"
     android:layout_height="match_parent">
-
-     <TextView
+    <TextView
         android:textColor="@android:color/white"
         android:textStyle="bold"
         android:textAlignment="center"
@@ -30,104 +31,108 @@
         android:layout_height="wrap_content"
         android:id="@+id/scrollView1">
         <TableLayout
+            android:minWidth="25px"
+            android:minHeight="25px"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/tableLayout1">
-            <TextView
-                android:textColor="@android:color/white"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:text="@string/txt1"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:id="@+id/textView2" />
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:id="@+id/tableRow1">
+                <ImageView
+                    android:contentDescription=""
+                    android:layout_width="37dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/correo"
+                    android:id="@+id/imageView2" />
                 <EditText
                     android:textColor="@android:color/white"
-                    android:layout_width="580.0dp"
-                    android:layout_height="wrap_content"
+                    android:textColorHint="@android:color/white"
+                    android:hint="Dirección de correo"
+                    android:layout_width="629.0dp"
+                    android:layout_height="47.0dp"
                     android:inputType="textEmailAddress"
                     android:id="@+id/editText1" />
             </TableRow>
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:text=""
-                android:id="@+id/textView4" />
-            <TextView
-                android:textColor="@android:color/white"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:text="@string/txt6"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:id="@+id/textView3" />
+                android:id="@+id/textView2" />
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:id="@+id/tableRow2">
+                <ImageView
+                    android:contentDescription=""
+                    android:layout_width="37dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/pass"
+                    android:id="@+id/imageView3" />
                 <EditText
                     android:textColor="@android:color/white"
-                    android:layout_width="580.0dp"
-                    android:layout_height="wrap_content"
+                    android:textColorHint="@android:color/white"
+                    android:hint="Repitir contraseña"
+                    android:layout_width="match_parent"
+                    android:layout_height="43.5dp"
                     android:inputType="textPassword"
                     android:id="@+id/editText2" />
             </TableRow>
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:text=""
-                android:id="@+id/textView5" />
-            <TextView
-                android:textColor="@android:color/white"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:text="@string/txt7"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:id="@+id/textView6" />
+                android:id="@+id/textView3" />
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:id="@+id/tableRow3">
+                <ImageView
+                android:contentDescription=""
+                android:layout_width="37dp"
+                android:layout_height="40dp"
+                android:src="@drawable/pass"
+                android:id="@+id/imageView4" />
                 <EditText
                     android:textColor="@android:color/white"
-                    android:layout_width="580.0dp"
-                    android:layout_height="wrap_content"
+                    android:textColorHint="@android:color/white"
+                    android:hint="Repitir contraseña"
+                    android:layout_width="match_parent"
+                    android:layout_height="51.0dp"
                     android:inputType="textPassword"
-                    android:minWidth="25px"
-                    android:minHeight="25px"
                     android:id="@+id/editText3" />
             </TableRow>
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:text=""
-                android:id="@+id/textView7" />
-            <Button
-                android:background="@color/background1"
-                android:textColor="@android:color/white"
-                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/textView4" />
+            <ImageButton
+                android:contentDescription=""
+                android:background="@color/background"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="@string/btn2"
-                android:id="@+id/button1" />
+                android:src="@drawable/enter"
+                android:id="@+id/imbtnenter" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text=""
-                android:id="@+id/textView8" />
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/textView5" />
             <Button
-                android:gravity="center"
+                android:textColor="@android:color/white"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:textColor="@android:color/white"
                 android:background="@color/background"
-                android:text="@string/btn3"
-                android:id="@+id/btnsesion" />
+                android:text="Iniciar Sesion"
+                android:id="@+id/btnaceptar" />
+
         </TableLayout>
     </ScrollView>
+
 </LinearLayout>

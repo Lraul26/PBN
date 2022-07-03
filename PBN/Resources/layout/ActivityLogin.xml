@@ -35,23 +35,17 @@
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/tableRow1">
-                <TextView
-                    android:textColor="@android:color/white"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/txt1"
-                    android:textStyle="bold"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:id="@+id/textView2" />
-            </TableRow>
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:id="@+id/tableRow2">
+                <ImageView
+                    android:layout_width="37.0dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/correo"
+                    android:id="@+id/imageView2" />
                 <EditText
+                    android:hint="Direccion de correo"
+                    android:textColorHint="@android:color/white"
                     android:textColor="@android:color/white"
-                    android:layout_width="580.0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress"
                     android:id="@+id/edtemail" />
@@ -65,44 +59,41 @@
                 android:id="@+id/tvemail" />
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/tableRow3">
-                <TextView
-                    android:textColor="@android:color/white"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:text="@string/txt2"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:id="@+id/textView3" />
-            </TableRow>
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/tableRow4" >
+                android:layout_height="63.5dp"
+                android:id="@+id/tableRow4">
+                <ImageView
+                    android:layout_width="37.0dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/pass"
+                    android:id="@+id/imageView3" />
                 <EditText
+                    android:hint="Contraseña"
+                    android:textColorHint="@android:color/white"
                     android:textColor="@android:color/white"
-                    android:layout_width="match_parent"
+                    android:layout_width="558.5dp"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"
                     android:id="@+id/edtpass" />
             </TableRow>
             <TextView
                 android:textAlignment="center"
-                 android:textColor="@android:color/holo_red_dark"
+                android:textColor="@android:color/holo_red_dark"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text=""
                 android:id="@+id/tvpass" />
-            <Button
-                android:textStyle="bold"
-                android:gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/background1"
+            <CheckBox
                 android:textColor="@android:color/white"
-                android:text="@string/btn1"
-                android:id="@+id/btnentrar" />
+                android:layout_width="match_parent"
+                android:layout_height="42.5dp"
+                android:text="Recordarme"
+                android:id="@+id/checkBox1" />
+            <ImageButton
+                android:background="@color/background"
+                android:src="@drawable/enter"
+                android:id="@+id/btnentrar"
+                android:layout_height="66.0dp"
+                android:layout_width="582.5dp" />
             <TextView
                 android:textAlignment="center"
                 android:textColor="@android:color/holo_red_dark"
@@ -127,7 +118,8 @@
                 android:layout_height="wrap_content"
                 android:text="@string/btn2"
                 android:id="@+id/btnregistrate" />
-
+           
+       
         </TableLayout>
     </ScrollView>
 </LinearLayout>

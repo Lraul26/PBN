@@ -83,9 +83,15 @@ namespace PBN
                 var res = new Intent(this, typeof(BusActivity));
                 StartActivity(res);
             }
+            else if (id == Resource.Id.nav_parada)
+            {
+                var res = new Intent(this, typeof(AgregarParadaActivity));
+                StartActivity(res);
+            }
             else if (id == Resource.Id.nav_comentarios)
             {
-
+                var res = new Intent(this, typeof(AgregarComentarioActivity));
+                StartActivity(res);
             }
             else if (id == Resource.Id.nav_tema)
             {

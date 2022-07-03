@@ -7,10 +7,12 @@
         <menu>
             <item
                 android:id="@+id/nav_mrutas"
-                android:title="Mostrar Rutas" />
-		 <item
-                android:id="@+id/nav_comentarios"
-                android:title="Comentarios" />
+				android:icon="@drawable/bus"
+                android:title="Rutas" />
+			<item
+			   android:id="@+id/nav_parada"
+			   android:icon="@drawable/parada"
+			   android:title="Parada" />
         </menu>
     </item>
 	
@@ -18,10 +20,16 @@
         <menu>
             <item
                 android:id="@+id/nav_tema"
+                android:icon="@drawable/tema"
                 android:title="Tema" />
             <item
                 android:id="@+id/nav_notificacion"
+				android:icon="@drawable/notificacion"
                 android:title="Notificaciones" />
+		    <item
+                android:id="@+id/nav_comentarios"
+				android:icon="@drawable/comentario"
+                android:title="Comentarios" />
         </menu>
     </item>
 	
@@ -29,11 +37,16 @@
         <menu>
             <item
                 android:id="@+id/nav_valorar"
-                android:title="Valoranos" />
+				android:icon="@drawable/estrella"
+                android:title="Valorar" />
             <item
                 android:id="@+id/nav_compartir"
-                android:title="Comparte" />
+				android:icon="@drawable/compartir"
+                android:title="Compartir" />
+		 <item
+                android:id="@+id/nav_cerrar"
+				android:icon="@drawable/cerrar"
+                android:title="Cerrar sesion" />
         </menu>
     </item>
-
 </menu>

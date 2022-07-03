@@ -14,7 +14,8 @@ namespace PBN
     [Activity(Label = "LoginActivity", MainLauncher = true)]
     public class LoginActivity : Activity
     {
-        Button btnentrar, btnregistrar;
+        Button  btnregistrar;
+        ImageButton btnentrar;
         EditText edtemail, edtpass;
         TextView tvemail, tvpass, tvresultado;
         string Email = "administrador@pbn.com", password="admin123";
@@ -32,7 +33,7 @@ namespace PBN
             edtemail = FindViewById<EditText>(Resource.Id.edtemail);
             edtpass = FindViewById<EditText>(Resource.Id.edtpass);
             btnregistrar = FindViewById<Button>(Resource.Id.btnregistrate);
-            btnentrar = FindViewById<Button>(Resource.Id.btnentrar);
+            btnentrar = FindViewById<ImageButton>(Resource.Id.btnentrar);
             btnregistrar.Click += Btnregistrar_Click;
             btnentrar.Click += Btnentrar_Click;
         }

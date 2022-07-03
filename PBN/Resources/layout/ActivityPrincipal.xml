@@ -17,17 +17,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/tableRow1">
-            <EditText
-                android:layout_width="400.5dp"
-                android:layout_height="wrap_content"
-                android:hint="Buscar..."
-                android:textColorHint="@android:color/white"
-                android:inputType="textMultiLine"
+            <SearchView
+                android:layout_width="412.5dp"
+                android:layout_height="76.0dp"
                 android:minWidth="25px"
                 android:minHeight="25px"
-                android:id="@+id/editText1" />
+                android:id="@+id/searchView1" />
             <Spinner
-                android:layout_width="58.5dp"
+                android:layout_width="90.0dp"
                 android:layout_height="match_parent"
                 android:id="@+id/spinner1" />
         </TableRow>

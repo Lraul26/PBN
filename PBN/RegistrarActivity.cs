@@ -20,7 +20,7 @@ namespace PBN
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.ActivityRegistrar);
             // Create your application here
-            btnsesion = FindViewById<Button>(Resource.Id.btnsesion);
+            btnsesion = FindViewById<Button>(Resource.Id.btnaceptar);
             btnsesion.Click += Btnsesion_Click;
 
         }

@@ -56,7 +56,15 @@
             android:layout_height="wrap_content"
             android:id="@+id/btncancelar" />
             </TableRow>
+            <TextView
+            android:textColor="@android:color/white"
+            android:layout_gravity="center"
+            android:text=""
+            android:layout_width="match_parent"
+            android:layout_height="37.5dp"
+            android:id="@+id/txtrespuesta" />
     </TableLayout>
+   
 
 
 </LinearLayout>
