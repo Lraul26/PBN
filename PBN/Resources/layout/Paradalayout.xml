@@ -5,16 +5,16 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:background="@color/background"
-    android:padding="15.0dp"
+    android:padding="15dp"
     android:layout_height="match_parent">
+
     <TextView
         android:gravity="center"
-        android:textAlignment="center"
         android:textColor="@color/blanco"
-        android:text="Rutas de transporte urbano"
+        android:text="Paradas de la capital de managua"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
-        android:layout_height="91.0dp"
+        android:layout_height="106.5dp"
         android:id="@+id/textView1" />
     <SearchView
         android:background="@color/blanco"
@@ -24,8 +24,12 @@
         android:layout_height="wrap_content"
         android:id="@+id/searchView1" />
     <ListView
+        android:minWidth="25px"
+        android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/lvbus" />
+        android:id="@+id/lvparada" />
+        
+  
 
 </LinearLayout>

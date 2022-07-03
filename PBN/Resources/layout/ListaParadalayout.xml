@@ -1,31 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:p4="http://xamarin.com/mono/android/designer"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:background="@color/background"
-    android:padding="15.0dp"
+    android:padding="15dp"
     android:layout_height="match_parent">
     <TextView
         android:gravity="center"
-        android:textAlignment="center"
         android:textColor="@color/blanco"
-        android:text="Rutas de transporte urbano"
+        android:text=""
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
-        android:layout_height="91.0dp"
-        android:id="@+id/textView1" />
-    <SearchView
-        android:background="@color/blanco"
+        android:layout_height="124.5dp"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:id="@+id/txtparadabus" />
+    <ListView
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/searchView1" />
-    <ListView
-        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/lvbus" />
+        android:id="@+id/lvparadabus" />
 
 </LinearLayout>

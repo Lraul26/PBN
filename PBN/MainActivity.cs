@@ -85,7 +85,7 @@ namespace PBN
             }
             else if (id == Resource.Id.nav_parada)
             {
-                var res = new Intent(this, typeof(AgregarParadaActivity));
+                var res = new Intent(this, typeof(ParadaActivity));
                 StartActivity(res);
             }
             else if (id == Resource.Id.nav_comentarios)

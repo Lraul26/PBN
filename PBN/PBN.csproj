@@ -70,8 +70,10 @@
     <Compile Include="CsGlobal.cs" />
     <Compile Include="DetalleBusActivity.cs" />
     <Compile Include="DetalleParadaActivity.cs" />
+    <Compile Include="ListaParadaActivity.cs" />
     <Compile Include="LoginActivity.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="ParadaActivity.cs" />
     <Compile Include="RegistrarActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -179,7 +181,7 @@
     <AndroidResource Include="Resources\drawable\bus.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\ItemBuslayout.xml">
+    <AndroidResource Include="Resources\layout\Paradalayout.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -416,6 +418,14 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-xxxhdpi\cerrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\paradadebus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\ListaParadalayout.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

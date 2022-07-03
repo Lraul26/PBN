@@ -40,8 +40,9 @@ namespace PBN
             //Definimos el formato fila
             View view = convertView;
             if (view == null)
-                view = context.LayoutInflater.Inflate(Resource.Layout.ItemBuslayout, null);
-            view.FindViewById<TextView>(Resource.Id.textView1).Text = item.NumeroAuntoBus.ToString();
+                view = context.LayoutInflater.Inflate(Android.Resource.Layout.SimpleListItem2, null);
+            view.FindViewById<TextView>(Android.Resource.Id.Text1).Text =  "Ruta " + item.NumeroAuntoBus.ToString();
+            view.FindViewById<TextView>(Android.Resource.Id.Text2).Text =  "Cantidad de paradas " + CsGlobal.Parada.Where(x => x.Idbus == item.IdAutoBus).Count().ToString();
             return view;
         }
     }

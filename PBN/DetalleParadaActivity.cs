@@ -15,9 +15,7 @@ namespace PBN
     public class DetalleParadaActivity : Activity
     {
         Parada parada;
-        EditText etparada;
-        Button btnguardar, btncancelar;
-        TextView tvresultado;
+        TextView NomParada;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -26,24 +24,8 @@ namespace PBN
             int id = Intent.GetIntExtra("id", 0);
             parada = CsGlobal.Parada.Where(x => x.IdPar == id).FirstOrDefault();
 
-            etparada = FindViewById<EditText>(Resource.Id.edparada);
-            btnguardar = FindViewById<Button>(Resource.Id.btnguardar);
-            btncancelar = FindViewById<Button>(Resource.Id.btncancelar);
-            tvresultado = FindViewById<TextView>(Resource.Id.tvresultado);
-
-            etparada.Text = parada.NombrePar;
-            btncancelar.Click += Btncancelar_Click;
-            btnguardar.Click += Btnguardar_Click;
-        }
-
-        private void Btnguardar_Click(object sender, EventArgs e)
-        {
-        
-        }
-
-        private void Btncancelar_Click(object sender, EventArgs e)
-        {
-            
+            NomParada = FindViewById<TextView>(Resource.Id.txtparada);
+            NomParada.Text = parada.NombrePar;
         }
     }
 }

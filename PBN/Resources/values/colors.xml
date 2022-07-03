@@ -6,7 +6,8 @@
 	
 	<color name="background">#063254</color>
     <color name="background1">#3c4c8f</color>
-	  <color name="background2">#15297c</color>
+	<color name="background2">#15297c</color>
 	<color name="background3">#c3e3fd</color>
+	<color name="blanco">#ffff</color>
 
 </resources>

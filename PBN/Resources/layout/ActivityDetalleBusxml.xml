@@ -14,22 +14,19 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="90.0dp"
-        android:minWidth="25px"
-        android:minHeight="25px"
         android:id="@+id/tvtitulo" />
-    <ListView
-        android:cacheColorHint="@android:color/white"
+    <androidx.appcompat.widget.SearchView
+        android:background="@color/blanco"
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/searchView1" />
+
+    <ListView
+        android:cacheColorHint="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:id="@+id/lvdtbus" />
-    <Button
-        android:textColor="@android:color/white"
-        android:background="@color/background1"
-        android:text="Agregar"
-        android:layout_width="125.0dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/button1" />
 
 </LinearLayout>
