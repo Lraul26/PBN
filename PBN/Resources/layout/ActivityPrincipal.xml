@@ -11,7 +11,7 @@
         android:gravity="center"
         android:textAlignment="center"
         android:textColor="@color/blanco"
-        android:text="Rutas de transporte urbano"
+        android:text="@string/txt10"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="91.0dp"

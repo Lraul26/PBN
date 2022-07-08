@@ -6,13 +6,17 @@
     <item android:title="Transporte">
         <menu>
             <item
-                android:id="@+id/nav_mrutas"
+                android:id="@+id/nav_rutas"
 				android:icon="@drawable/bus"
                 android:title="Rutas" />
 			<item
 			   android:id="@+id/nav_parada"
 			   android:icon="@drawable/parada"
 			   android:title="Parada" />
+			<item
+			   android:id="@+id/nav_opciones"
+			   android:icon="@drawable/opcion"
+			   android:title="Acciones Avanzada" />
         </menu>
     </item>
 	

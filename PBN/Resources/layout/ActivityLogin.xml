@@ -37,12 +37,13 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/tableRow2">
                 <ImageView
-                    android:layout_width="37.0dp"
-                    android:layout_height="40dp"
+                    android:contentDescription=""
+                    android:layout_width="35.0dp"
+                    android:layout_height="33.0dp"
                     android:src="@drawable/correo"
                     android:id="@+id/imageView2" />
                 <EditText
-                    android:hint="Direccion de correo"
+                    android:hint="@string/place1"
                     android:textColorHint="@android:color/white"
                     android:textColor="@android:color/white"
                     android:layout_width="wrap_content"
@@ -62,12 +63,12 @@
                 android:layout_height="63.5dp"
                 android:id="@+id/tableRow4">
                 <ImageView
-                    android:layout_width="37.0dp"
-                    android:layout_height="40dp"
+                    android:layout_width="35.0dp"
+                    android:layout_height="35.0dp"
                     android:src="@drawable/pass"
                     android:id="@+id/imageView3" />
                 <EditText
-                    android:hint="Contraseña"
+                    android:hint="@string/place2"
                     android:textColorHint="@android:color/white"
                     android:textColor="@android:color/white"
                     android:layout_width="558.5dp"
@@ -86,9 +87,10 @@
                 android:textColor="@android:color/white"
                 android:layout_width="match_parent"
                 android:layout_height="42.5dp"
-                android:text="Recordarme"
+                android:text="@string/check"
                 android:id="@+id/checkBox1" />
             <ImageButton
+                android:contentDescription=""
                 android:background="@color/background"
                 android:src="@drawable/enter"
                 android:id="@+id/btnentrar"
@@ -118,8 +120,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/btn2"
                 android:id="@+id/btnregistrate" />
-           
-       
         </TableLayout>
     </ScrollView>
 </LinearLayout>

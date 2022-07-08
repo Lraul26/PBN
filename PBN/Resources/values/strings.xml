@@ -9,17 +9,30 @@
 	<string name="txt2">Contraseña</string>
 	<string name="txt3">LOGIN</string>
 	<string name="txt4">¿Aún no tienes cuenta?</string>
-	<string name="txt5">REGISTRO</string>
+	<string name="txt5">Ingresar Comentario</string>
 	<string name="txt6">Nueva Contraseña</string>
 	<string name="txt7">Repetir Contraseña</string>
 	<string name="txt8">Proxi Bus Nic</string>
 	<string name="txt9">proxibusnic@pbn.com</string>
+	<string name="place1">Direccion de correo</string>
+	<string name="place2">Contraseña</string>
+	<string name="check">Recordarme</string>
+	<string name="txt10">Rutas del transporte urbano</string>
+	<string name="txt11">Paradas de la capital de managua</string>
+	<string name="txt12">Comentarios sobre alguna parada</string>
+	<string name="txt13">Agregar Bus</string>
+	<string name="txt14">Editar Bus</string>
+	<string name="txt15">Agregar Parada</string>
+	<string name="txt16">Editar Parada</string>
+	<string name="txt17">Acciones Avanzadas</string>
+
 
 
 
 	<string name="btn1">Entrar</string>
 	<string name="btn2">Registrarse</string>
 	<string name="btn3">INICIAR SESIÓN</string>
+	<string name="btn4">Enviar Comentario</string>
 
 				  
 </resources>

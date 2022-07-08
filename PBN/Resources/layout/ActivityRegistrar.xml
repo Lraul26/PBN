@@ -42,14 +42,14 @@
                 android:id="@+id/tableRow1">
                 <ImageView
                     android:contentDescription=""
-                    android:layout_width="37dp"
-                    android:layout_height="40dp"
+                    android:layout_width="35.0dp"
+                    android:layout_height="35.0dp"
                     android:src="@drawable/correo"
                     android:id="@+id/imageView2" />
                 <EditText
                     android:textColor="@android:color/white"
                     android:textColorHint="@android:color/white"
-                    android:hint="Dirección de correo"
+                    android:hint="@string/place1"
                     android:layout_width="629.0dp"
                     android:layout_height="47.0dp"
                     android:inputType="textEmailAddress"
@@ -67,14 +67,14 @@
                 android:id="@+id/tableRow2">
                 <ImageView
                     android:contentDescription=""
-                    android:layout_width="37dp"
-                    android:layout_height="40dp"
+                    android:layout_width="35.0dp"
+                    android:layout_height="35.0dp"
                     android:src="@drawable/pass"
                     android:id="@+id/imageView3" />
                 <EditText
                     android:textColor="@android:color/white"
                     android:textColorHint="@android:color/white"
-                    android:hint="Repitir contraseña"
+                    android:hint="@string/txt6"
                     android:layout_width="match_parent"
                     android:layout_height="43.5dp"
                     android:inputType="textPassword"
@@ -91,15 +91,15 @@
                 android:layout_height="match_parent"
                 android:id="@+id/tableRow3">
                 <ImageView
-                android:contentDescription=""
-                android:layout_width="37dp"
-                android:layout_height="40dp"
-                android:src="@drawable/pass"
-                android:id="@+id/imageView4" />
+                    android:contentDescription=""
+                    android:layout_width="35dp"
+                    android:layout_height="35.0dp"
+                    android:src="@drawable/pass"
+                    android:id="@+id/imageView4" />
                 <EditText
                     android:textColor="@android:color/white"
                     android:textColorHint="@android:color/white"
-                    android:hint="Repitir contraseña"
+                    android:hint="@string/txt7"
                     android:layout_width="match_parent"
                     android:layout_height="51.0dp"
                     android:inputType="textPassword"
@@ -129,9 +129,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/background"
-                android:text="Iniciar Sesion"
+                android:text="@string/btn3"
                 android:id="@+id/btnaceptar" />
-
         </TableLayout>
     </ScrollView>
 

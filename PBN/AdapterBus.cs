@@ -1,5 +1,6 @@
 ﻿using Android.App;
 using Android.Content;
+using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
@@ -8,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+
 namespace PBN
 {
     internal class AdapterBus : BaseAdapter
@@ -41,8 +43,13 @@ namespace PBN
             View view = convertView;
             if (view == null)
                 view = context.LayoutInflater.Inflate(Android.Resource.Layout.SimpleListItem2, null);
-            view.FindViewById<TextView>(Android.Resource.Id.Text1).Text =  "Ruta " + item.NumeroAuntoBus.ToString();
-            view.FindViewById<TextView>(Android.Resource.Id.Text2).Text =  "Cantidad de paradas " + CsGlobal.Parada.Where(x => x.Idbus == item.IdAutoBus).Count().ToString();
+            TextView txtruta = view.FindViewById<TextView>(Android.Resource.Id.Text1);
+            txtruta.Text = "Ruta " + item.NumeroAuntoBus.ToString();
+            txtruta.SetTextColor(Color.LightGray);
+
+            TextView cantidad = view.FindViewById<TextView>(Android.Resource.Id.Text2);
+            cantidad.Text ="Cantidad de paradas " + CsGlobal.Parada.Where(x => x.Idbus == item.IdAutoBus).Count().ToString();
+            cantidad.SetTextColor(Color.White);
             return view;
         }
     }

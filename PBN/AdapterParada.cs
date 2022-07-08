@@ -1,5 +1,6 @@
 ﻿using Android.App;
 using Android.Content;
+using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
@@ -41,8 +42,13 @@ namespace PBN
             View view = convertView;
             if (view == null)
                 view = context.LayoutInflater.Inflate(Android.Resource.Layout.SimpleListItem2, null);
-            view.FindViewById<TextView>(Android.Resource.Id.Text1).Text = item.NombrePar;
-            view.FindViewById<TextView>(Android.Resource.Id.Text2).Text = "Cabtidad de Buces " + CsGlobal.Autobuces.Where(x => x.IdAutoBus == item.Idbus).Count().ToString();
+            TextView parada = view.FindViewById<TextView>(Android.Resource.Id.Text1);
+            parada.Text = item.NombrePar;
+            parada.SetTextColor(Color.LightGray);
+
+            TextView cantidad = view.FindViewById<TextView>(Android.Resource.Id.Text2);
+            cantidad.Text = "Cabtidad de Buces " + CsGlobal.Autobuces.Where(x => x.IdAutoBus == item.Idbus).Count().ToString();
+            cantidad.SetTextColor(Color.White);
             return view;
         }
     }

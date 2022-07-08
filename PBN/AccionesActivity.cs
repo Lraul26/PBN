@@ -11,18 +11,14 @@ using System.Text;
 
 namespace PBN
 {
-    [Activity(Label = "AgregarComentarioActivity")]
-    public class AgregarComentarioActivity : Activity
+    [Activity(Label = "AccionesActivity")]
+    public class AccionesActivity : Activity
     {
-        ListView lvparada;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.ActivityAgregarComentarios);
-            lvparada = FindViewById<ListView>(Resource.Id.lvoaradaCom);
-
-            lvparada.Adapter = new AdapterParada(this,CsGlobal.Parada); 
-            
+            SetContentView(Resource.Layout.ActivityAcciones);
+            // Create your application here
         }
     }
 }

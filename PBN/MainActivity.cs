@@ -78,7 +78,7 @@ namespace PBN
         {
             int id = item.ItemId;
 
-            if (id == Resource.Id.nav_mrutas)
+            if (id == Resource.Id.nav_rutas)
             {
                 var res = new Intent(this, typeof(BusActivity));
                 StartActivity(res);
@@ -88,9 +88,9 @@ namespace PBN
                 var res = new Intent(this, typeof(ParadaActivity));
                 StartActivity(res);
             }
-            else if (id == Resource.Id.nav_comentarios)
+            else if (id == Resource.Id.nav_opciones)
             {
-                var res = new Intent(this, typeof(AgregarComentarioActivity));
+                var res = new Intent(this, typeof(AccionesActivity));
                 StartActivity(res);
             }
             else if (id == Resource.Id.nav_tema)
@@ -101,11 +101,21 @@ namespace PBN
             {
 
             }
+            else if (id == Resource.Id.nav_comentarios)
+            {
+                var res = new Intent(this, typeof(AgregarComentarioActivity));
+                StartActivity(res);
+            }
+
             else if (id == Resource.Id.nav_valorar)
             {
 
             }
             else if (id == Resource.Id.nav_compartir)
+            {
+
+            }
+            else if (id == Resource.Id.nav_cerrar)
             {
 
             }
