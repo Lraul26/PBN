@@ -88,7 +88,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="42.5dp"
                 android:text="@string/check"
-                android:id="@+id/checkBox1" />
+                android:id="@+id/cbxRecordar" />
             <ImageButton
                 android:contentDescription=""
                 android:background="@color/background"

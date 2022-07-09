@@ -11,14 +11,16 @@ using System.Text;
 
 namespace PBN
 {
-    [Activity(Label = "LoginActivity", MainLauncher = true)]
+    [Activity(Label = "LoginActivity")]
     public class LoginActivity : Activity
     {
-        Button  btnregistrar;
+        proxibusnicweb.ProxiBusNicWS db = new proxibusnicweb.ProxiBusNicWS();
+
+        Button btnregistrar;
         ImageButton btnentrar;
         EditText edtemail, edtpass;
         TextView tvemail, tvpass, tvresultado;
-        string Email = "administrador@pbn.com", password="admin123";
+        CheckBox cbxRecordar;
 
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -36,36 +38,69 @@ namespace PBN
             btnentrar = FindViewById<ImageButton>(Resource.Id.btnentrar);
             btnregistrar.Click += Btnregistrar_Click;
             btnentrar.Click += Btnentrar_Click;
+
+            cbxRecordar = FindViewById<CheckBox>(Resource.Id.cbxRecordar);
         }
 
         private void Btnentrar_Click(object sender, EventArgs e)
         {
-            if (edtemail.Text == String.Empty)
+
+
+            string correo = edtemail.Text.Trim();
+            string clave = edtpass.Text.Trim();
+            if (correo.Length == 0 && clave.Length == 0)
             {
-                tvemail.Text = "Ingrese una dirección de correo";
+                Toast.MakeText(Application.Context, "Debe de llenar ambos campos\npara iniciar seisón", ToastLength.Short).Show();
             }
-            else if (edtpass.Text == String.Empty)
-            {
-                tvpass.Text = "Ingrese una contraseña";
-            }
+
             else
             {
-                if (edtemail.Text == Email && edtpass.Text == password)
+                try
                 {
-                    var res = new Intent(this, typeof(MainActivity));
-                    StartActivity(res);
+                    if (db.Login(correo, clave))
+                    {
+
+                        if (cbxRecordar.Checked)
+                        {
+
+                            ISharedPreferences preferencia = Application.Context.GetSharedPreferences("informacion", FileCreationMode.Private);
+                            ISharedPreferencesEditor editor = preferencia.Edit();
+                            editor.PutString("correo", correo);
+                            editor.PutString("clave", clave);
+                            editor.PutBoolean("recordar", cbxRecordar.Checked);
+                            editor.Apply();
+
+
+                        }
+
+                        var res = new Intent(this, typeof(MainActivity));
+                        StartActivity(res);
+                        this.Finish();
+                    }
+                    else
+                    {
+                        Toast.MakeText(Application.Context, "No se ha podido verificar su cuenta\ningrese sus datos nuevamente", ToastLength.Short).Show();
+                    }
+
                 }
-                else
+                catch
                 {
-                    tvresultado.Text = "Email o Contraseña incorrecta";
+                    Toast.MakeText(Application.Context, "Verifique su conexión a internet", ToastLength.Short).Show();
                 }
+
+
+
             }
+
+
         }
 
         private void Btnregistrar_Click(object sender, EventArgs e)
         {
+
             var res = new Intent(this, typeof(RegistrarActivity));
             StartActivity(res);
         }
     }
 }
+  
