@@ -8298,14 +8298,14 @@ namespace PBN
 			// aapt resource value: 0x7F08006D
 			public const int btnCrearCuenta = 2131230829;
 			
-			// aapt resource value: 0x7F08006F
-			public const int btnentrar = 2131230831;
+			// aapt resource value: 0x7F080070
+			public const int btnentrar = 2131230832;
 			
 			// aapt resource value: 0x7F08006E
 			public const int btnIniciarSesion = 2131230830;
 			
-			// aapt resource value: 0x7F080070
-			public const int btnregistrate = 2131230832;
+			// aapt resource value: 0x7F08006F
+			public const int btnRegistrar = 2131230831;
 			
 			// aapt resource value: 0x7F080071
 			public const int button1 = 2131230833;
@@ -10899,6 +10899,9 @@ namespace PBN
 			
 			// aapt resource value: 0x7F0F0099
 			public const int txt9 = 2131689625;
+			
+			// aapt resource value: 0x7F0F009A
+			public const int txtRegistro = 2131689626;
 			
 			static String()
 			{
