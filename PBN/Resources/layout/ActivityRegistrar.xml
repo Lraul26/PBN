@@ -53,7 +53,7 @@
                     android:layout_width="629.0dp"
                     android:layout_height="47.0dp"
                     android:inputType="textEmailAddress"
-                    android:id="@+id/editText1" />
+                    android:id="@+id/txtCorreo" />
             </TableRow>
             <TextView
                 android:layout_width="match_parent"
@@ -78,7 +78,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="43.5dp"
                     android:inputType="textPassword"
-                    android:id="@+id/editText2" />
+                    android:id="@+id/txtPrimerClave" />
             </TableRow>
             <TextView
                 android:layout_width="match_parent"
@@ -103,7 +103,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="51.0dp"
                     android:inputType="textPassword"
-                    android:id="@+id/editText3" />
+                    android:id="@+id/txtSegundaClave" />
             </TableRow>
             <TextView
                 android:layout_width="match_parent"
@@ -111,26 +111,34 @@
                 android:text=""
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:id="@+id/textView4" />
-            <ImageButton
+               <CheckBox
+                android:text="@string/check"
+                android:id="@+id/cbxMantenerSesion"
+                android:textColor="@android:color/white"/>
+         
+
+                <ImageButton
                 android:contentDescription=""
                 android:background="@color/background"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:src="@drawable/enter"
-                android:id="@+id/imbtnenter" />
+                android:id="@+id/btnCrearCuenta" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text=""
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:id="@+id/textView5" />
-            <Button
+                  <Button
                 android:textColor="@android:color/white"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/background"
                 android:text="@string/btn3"
-                android:id="@+id/btnaceptar" />
+                android:id="@+id/btnIniciarSesion" />
+    
+        
         </TableLayout>
     </ScrollView>
 

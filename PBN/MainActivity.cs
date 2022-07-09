@@ -77,7 +77,7 @@ namespace PBN
         public bool OnNavigationItemSelected(IMenuItem item)
         {
             int id = item.ItemId;
-
+            
             if (id == Resource.Id.nav_rutas)
             {
                 var res = new Intent(this, typeof(BusActivity));
@@ -117,6 +117,21 @@ namespace PBN
             }
             else if (id == Resource.Id.nav_cerrar)
             {
+
+                Android.App.AlertDialog.Builder alert = new Android.App.AlertDialog.Builder(this);
+                alert.SetTitle("Cerrar sesión");
+                alert.SetMessage("¿Desea cerrar sesión?").SetPositiveButton("Sí", (senderAlert, args) =>
+                {
+                    ISharedPreferences preferencia = Application.GetSharedPreferences("informacion", FileCreationMode.Private);
+                    ISharedPreferencesEditor editor = preferencia.Edit();
+                    editor.Clear();
+                    editor.Apply();
+                    this.Finish();
+
+                    Intent intent = new Intent(this, typeof(LoginActivity));
+                    StartActivity(intent);
+                }).SetNegativeButton("No", (senderAlert, args) => { }).Show();
+
 
             }
 

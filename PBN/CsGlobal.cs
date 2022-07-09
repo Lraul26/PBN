@@ -13,6 +13,9 @@ namespace PBN
 {
     internal class CsGlobal
     {
+
+     
+
         public static List<AutoBuces> Autobuces = new List<AutoBuces>()
         {
             new AutoBuces (1,106),
@@ -121,5 +124,5 @@ namespace PBN
         public int Idbus { get => idbus; set => idbus = value; }
     }
 
-   
+    
 }
