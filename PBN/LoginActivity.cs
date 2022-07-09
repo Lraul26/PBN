@@ -34,7 +34,7 @@ namespace PBN
             tvresultado = FindViewById<TextView>(Resource.Id.tvresultado);
             edtemail = FindViewById<EditText>(Resource.Id.edtemail);
             edtpass = FindViewById<EditText>(Resource.Id.edtpass);
-            btnregistrar = FindViewById<Button>(Resource.Id.btnregistrate);
+            btnregistrar = FindViewById<Button>(Resource.Id.btnRegistrar);
             btnentrar = FindViewById<ImageButton>(Resource.Id.btnentrar);
             btnregistrar.Click += Btnregistrar_Click;
             btnentrar.Click += Btnentrar_Click;
@@ -47,7 +47,7 @@ namespace PBN
 
 
             string correo = edtemail.Text.Trim();
-            string clave = edtpass.Text.Trim();
+            string clave = edtpass.Text;
             if (correo.Length == 0 && clave.Length == 0)
             {
                 Toast.MakeText(Application.Context, "Debe de llenar ambos campos\npara iniciar seisón", ToastLength.Short).Show();
@@ -71,6 +71,11 @@ namespace PBN
                             editor.Apply();
 
 
+                        }
+                        else
+                        {
+                            CsGlobal.Usuario.correo = correo;
+                            CsGlobal.Usuario.clave = clave;
                         }
 
                         var res = new Intent(this, typeof(MainActivity));
@@ -97,7 +102,7 @@ namespace PBN
 
         private void Btnregistrar_Click(object sender, EventArgs e)
         {
-
+          
             var res = new Intent(this, typeof(RegistrarActivity));
             StartActivity(res);
         }

@@ -11,7 +11,7 @@
         android:textColor="@android:color/white"
         android:textStyle="bold"
         android:textAlignment="center"
-        android:text="@string/txt5"
+        android:text="@string/txtRegistro"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -111,10 +111,12 @@
                 android:text=""
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:id="@+id/textView4" />
-               <CheckBox
+            <CheckBox
                 android:text="@string/check"
                 android:id="@+id/cbxMantenerSesion"
-                android:textColor="@android:color/white"/>
+                android:textColor="@android:color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
          
 
                 <ImageButton
