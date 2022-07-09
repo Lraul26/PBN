@@ -2,29 +2,31 @@
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
+using Android.Util;
 using Android.Views;
 using Android.Widget;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace PBN
 {
-    [Activity(Label = "Splash", MainLauncher = true)]
+    [Activity(MainLauncher = true, Theme = "@style/SplashTema", Icon = "@drawable/logoPBM", NoHistory = true)]
     public class Splash : Activity
     {
-        protected override void OnCreate(Bundle savedInstanceState)
+       protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
 
-        ISharedPreferences preferencia = Application.GetSharedPreferences("informacion", FileCreationMode.Private);
-        bool recordar = preferencia.GetBoolean("recordar", false);
-     
+            ISharedPreferences preferencia = Application.GetSharedPreferences("informacion", FileCreationMode.Private);
+            bool recordar = preferencia.GetBoolean("recordar", false);
+
             if (recordar)
             {
-                
+
                 Intent intent = new Intent(this, typeof(MainActivity));
                 StartActivity(intent);
             }
@@ -38,6 +40,9 @@ namespace PBN
                 StartActivity(intent);
             }
             this.Finish();
+
+
         }
+     
     }
 }
