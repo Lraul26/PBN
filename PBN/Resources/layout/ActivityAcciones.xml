@@ -8,7 +8,8 @@
     android:padding="15.0dp"
     android:layout_height="match_parent">
     <TextView
-        android:textColor="@color/blanco"
+        android:textStyle="italic"
+        android:textColor="@color/background3"
         android:gravity="center"
         android:text="@string/txt17"
         android:textAppearance="?android:attr/textAppearanceLarge"
