@@ -34,7 +34,7 @@ namespace PBN
             tvresultado = FindViewById<TextView>(Resource.Id.tvresultado);
             edtemail = FindViewById<EditText>(Resource.Id.edtemail);
             edtpass = FindViewById<EditText>(Resource.Id.edtpass);
-            btnregistrar = FindViewById<Button>(Resource.Id.btnRegistrar);
+            btnregistrar = FindViewById<Button>(Resource.Id.btnregistrar);
             btnentrar = FindViewById<ImageButton>(Resource.Id.btnentrar);
             btnregistrar.Click += Btnregistrar_Click;
             btnentrar.Click += Btnentrar_Click;
