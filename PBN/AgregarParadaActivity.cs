@@ -51,8 +51,13 @@ namespace PBN
         {
             if (validarVacios())
             {
-                
+               
             }
+        }
+
+        private void Db_AgregarParadaCompleted(object sender, proxibusnicweb.AgregarParadaCompletedEventArgs e)
+        {
+            
         }
 
         private void BtnCamara_Click(object sender, EventArgs e)
