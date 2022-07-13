@@ -73,7 +73,7 @@ namespace PBN
         //    Snackbar.Make(view, "Replace with your own action", Snackbar.LengthLong)
         //        .SetAction("Action", (Android.Views.View.IOnClickListener)null).Show();
         //}
-
+       
         public bool OnNavigationItemSelected(IMenuItem item)
         {
             int id = item.ItemId;
@@ -95,7 +95,28 @@ namespace PBN
             }
             else if (id == Resource.Id.nav_tema)
             {
+                Android.App.AlertDialog.Builder alert = new Android.App.AlertDialog.Builder(this);
+                alert.SetTitle("Tema");
+                alert.SetMessage("¿Desea cambiar el tema de la App?");
+                alert.SetPositiveButton("Tema Oscuro", (senderAlert, args) =>
+                {
+                    ISharedPreferences tema = Application.GetSharedPreferences("Tema", FileCreationMode.Private);
+                    ISharedPreferencesEditor editor = tema.Edit();
+                    editor.Clear();
+                    editor.Apply();
 
+                    Delegate.SetLocalNightMode(AppCompatDelegate.ModeNightYes);
+      
+                }).Show();
+                alert.SetNegativeButton("Tema Claro", (senderAlert, args) => {
+                    ISharedPreferences tema2 = Application.GetSharedPreferences("Tema", FileCreationMode.Private);
+                    ISharedPreferencesEditor editor = tema2.Edit();
+                    editor.Clear();
+                    editor.Apply();
+
+                    Delegate.SetLocalNightMode(AppCompatDelegate.ModeNightNo);
+                }).Show();
+                
             }
             else if (id == Resource.Id.nav_notificacion)
             {
@@ -131,14 +152,15 @@ namespace PBN
                     Intent intent = new Intent(this, typeof(LoginActivity));
                     StartActivity(intent);
                 }).SetNegativeButton("No", (senderAlert, args) => { }).Show();
-
-
             }
 
             DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             drawer.CloseDrawer(GravityCompat.Start);
             return true;
         }
+
+      
+
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);

@@ -14,6 +14,7 @@ namespace PBN
 {
     internal class AdapterParada : BaseAdapter
     {
+  
         Activity context;
         List<Parada> lista;
 

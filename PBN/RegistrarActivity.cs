@@ -15,6 +15,7 @@ namespace PBN
     public class RegistrarActivity : Activity
     {
         proxibusnicweb.ProxiBusNicWS db = new proxibusnicweb.ProxiBusNicWS();
+        Button BtnSesio;
         ImageButton btnCrearCuenta;
         EditText txtCorreo,txtClaveUno,txtClaveDos;
         CheckBox cbxRecordar;
@@ -23,6 +24,7 @@ namespace PBN
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.ActivityRegistrar);
             // Create your application here
+            BtnSesio = FindViewById<Button>(Resource.Id.btnIniciarSesion);
             btnCrearCuenta = FindViewById<ImageButton>(Resource.Id.btnCrearCuenta);
             btnCrearCuenta.Click += btnCrearCuenta_Click;
 

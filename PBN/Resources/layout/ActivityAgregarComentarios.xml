@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-	 android:background="@color/background"
     android:padding="15.0dp"
     android:layout_height="match_parent">
 
     <TextView
         android:gravity="center"
-        android:textColor="@android:color/white"
         android:text="@string/txt12"
         android:textStyle="bold"
         android:textAlignment="center"
@@ -19,7 +19,6 @@
         android:minHeight="25px"
         android:id="@+id/textView1" />
 	<SearchView
-		android:background="@color/blanco"
 		android:minWidth="25px"
 		android:minHeight="25px"
 		android:layout_width="match_parent"
@@ -29,10 +28,9 @@
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="match_parent"
-        android:layout_height="489.5dp"
+        android:layout_height="300.5dp"
         android:id="@+id/lvoaradaCom" />
 	<TextView
-		android:textColor="@android:color/white"
 		android:layout_width="match_parent"
 		android:textAlignment="center"
 		android:layout_height="wrap_content"
@@ -41,7 +39,6 @@
 		android:textAppearance="?android:attr/textAppearanceLarge"
 		android:id="@+id/textView2" />
     <EditText
-        android:textColor="@android:color/white"
         android:layout_width="match_parent"
         android:layout_height="73.5dp"
         android:id="@+id/editComentario" />
@@ -50,8 +47,6 @@
         android:layout_width="212.5dp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:background="@color/background1"
-        android:textColor="@android:color/white"
         android:text="@string/btn4"
         android:id="@+id/button1" />
 </LinearLayout>

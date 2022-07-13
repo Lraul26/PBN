@@ -13,11 +13,11 @@ namespace PBN
 {
     internal class CsGlobal
     {
-
+        
      public static class Usuario
         {
-      public static string correo;
-      public static string clave;
+          public static string correo;
+          public static string clave;
 
       
         }

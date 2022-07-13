@@ -11,7 +11,7 @@ using System.Text;
 
 namespace PBN
 {
-    [Activity(Label = "AgregarComentarioActivity")]
+    [Activity(Label = "AgregarComentarioActivity", Theme = "@style/AppTheme.NoActionBar")]
     public class AgregarComentarioActivity : Activity
     {
         ListView lvparada;
