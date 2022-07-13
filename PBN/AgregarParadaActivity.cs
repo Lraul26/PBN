@@ -1,5 +1,4 @@
-﻿using Android;
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.Graphics;
 using Android.OS;
@@ -7,7 +6,6 @@ using Android.Provider;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using Plugin.Media;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -19,21 +17,14 @@ namespace PBN
     [Activity(Label = "AgregarParadaActivity")]
     public class AgregarParadaActivity : Activity
     {
-        readonly string[] permissionGroup =
-        {
-            Manifest.Permission.ReadExternalStorage,
-            Manifest.Permission.WriteExternalStorage,
-            Manifest.Permission.Camera
-        };
-
         proxibusnicweb.ParadasWS serve = new proxibusnicweb.ParadasWS();
         proxibusnicweb.ProxiBusNicWS db = new proxibusnicweb.ProxiBusNicWS();
 
-        EditText Descripcion, Alias, Longitud, Latitud;
+        EditText Descripcion, Alias, Longitu, Latitud;
         ImageView FotoParada;
-        ImageButton BtnCamara, BtnGaleria;
-        Button BtnGuardar;
-        private byte[] bitmapData ;
+        Button BtnCamara,BtnGaleria ,BtnGuardar;
+        private byte[] bitmapData;
+        string Usuario = CsGlobal.Usuario.correo;
         bool Activo = true;
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -41,43 +32,33 @@ namespace PBN
             SetContentView(Resource.Layout.ActivityAgregarParada);
             // Create your application here
 
-            BtnGaleria = FindViewById<ImageButton>(Resource.Id.btnAgregarfoto);
-            BtnCamara = FindViewById<ImageButton>(Resource.Id.btnCamara);
+            BtnGaleria = FindViewById<Button>(Resource.Id.btnAgregarfoto);
+            BtnCamara = FindViewById<Button>(Resource.Id.btnCamara);
             BtnGuardar = FindViewById<Button>(Resource.Id.btnAceptar);
 
             Descripcion = FindViewById<EditText>(Resource.Id.etDescrip);
             Alias = FindViewById<EditText>(Resource.Id.etAlias); Alias.Text = "N/A";
-            Longitud = FindViewById<EditText>(Resource.Id.etlatitud); Longitud.Text  = "N/A";
+            Longitu = FindViewById<EditText>(Resource.Id.etlatitud); Longitu.Text  = "N/A";
             Latitud = FindViewById<EditText>(Resource.Id.etlongitud); Latitud.Text = "N/A";
 
-            FotoParada = FindViewById<ImageView>(Resource.Id.ivParada);
+            FotoParada = FindViewById<ImageView>(Resource.Id.ivParada); 
 
-            BtnGaleria.Click += BtnGaleria_Click;
             BtnCamara.Click += BtnCamara_Click;
             BtnGuardar.Click += BtnGuardar_Click;
         }
-
-       
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
             if (validarVacios())
             {
-                serve.Descripcion = Descripcion.Text;
-                serve.Alias = Alias.Text;
-                serve.FotoParada = bitmapData;
-                serve.Estado = Activo;
-                serve.Longitud = Longitud.Text;
-                serve.Latitud = Latitud.Text;
-                serve.FechaCreacion = DateTime.Now;
-                serve.UsuarioCreacion = "admin@gmail.com";
-                serve.FechaModificacion = DateTime.Now;
-                serve.UsuarioModificacion = "admin@gmail.com";
-
-                Toast.MakeText(Application.Context, "Registro de Parada Exitoso"+ db.AgregarParada(serve), ToastLength.Short).Show();
+               
             }
         }
-  
+
+        private void Db_AgregarParadaCompleted(object sender, proxibusnicweb.AgregarParadaCompletedEventArgs e)
+        {
+            
+        }
 
         private void BtnCamara_Click(object sender, EventArgs e)
         {
@@ -91,7 +72,6 @@ namespace PBN
             FotoParada.SetImageBitmap(bitmap);
             using (var stream = new MemoryStream())
             {
-
                 bitmap.Compress(Bitmap.CompressFormat.Png, 0, stream);
                 bitmapData = stream.ToArray();
             }
@@ -105,40 +85,5 @@ namespace PBN
             }
             return true;
         }
-        private void BtnGaleria_Click(object sender, EventArgs e)
-        {
-            SubirFoto();
-        }
-
-        async void SubirFoto()
-        {
-            await CrossMedia.Current.Initialize();
-            if (!CrossMedia.Current.IsPickPhotoSupported)
-            {
-                Toast.MakeText(this, "El Dispositivo no es compatible", ToastLength.Short).Show();
-                return;
-            }
-            var file = await CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
-            {
-                PhotoSize = Plugin.Media.Abstractions.PhotoSize.Full,
-                CompressionQuality = 320 * 320
-            });
-
-            bitmapData = System.IO.File.ReadAllBytes(file.Path);
-            Bitmap bitmap = BitmapFactory.DecodeByteArray(bitmapData, 0, bitmapData.Length);
-            FotoParada.SetImageBitmap(bitmap);
-            using (var stream = new MemoryStream())
-            {
-                bitmap.Compress(Bitmap.CompressFormat.Png, 0, stream);
-                bitmapData = stream.ToArray();
-            }
-        }
-        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Android.Content.PM.Permission[] grantResults)
-        {
-            Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-
-            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-        }
-
     }
 }

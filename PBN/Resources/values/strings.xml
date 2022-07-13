@@ -25,16 +25,6 @@
 	<string name="txt15">Agregar Parada</string>
 	<string name="txt16">Editar Parada</string>
 	<string name="txt17">Acciones Avanzadas</string>
-       <!-- string para paradas -->
-	<string name="txt18">Parada</string>
-	<string name="txt19">Ingrese una descipción de la parada</string>
-	<string name="txt20">(*)</string>
-	<string name="txt21">Alias</string>
-	<string name="txt22">(Opcional)</string>
-	<string name="txt23">Latitud</string>
-	<string name="txt24">Longitud</string>
-	<string name="txt25">Subir Foto</string>
-	<string name="txt26">Tomar Foto</string>
 
 
 
