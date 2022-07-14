@@ -95,7 +95,7 @@
                 android:textColor="@color/blanco"
                 android:textSize="18dp"
                 android:gravity="center"
-                android:text="@string/txt15"
+                android:text="@string/txt16"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:id="@+id/textView5"
                 android:layout_height="wrap_content"

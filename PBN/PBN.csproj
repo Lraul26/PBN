@@ -68,13 +68,15 @@
     <Compile Include="AccionesActivity.cs" />
     <Compile Include="AdapterBus.cs" />
     <Compile Include="AdapterParada.cs" />
-    <Compile Include="addparabusActivity.cs" />
+    <Compile Include="AgregarBusActivity.cs" />
     <Compile Include="AgregarComentarioActivity.cs" />
     <Compile Include="AgregarParadaActivity.cs" />
     <Compile Include="BusActivity.cs" />
     <Compile Include="CsGlobal.cs" />
     <Compile Include="DetalleBusActivity.cs" />
     <Compile Include="DetalleParadaActivity.cs" />
+    <Compile Include="EditarBusActivity.cs" />
+    <Compile Include="EditarParadaActivity.cs" />
     <Compile Include="ListaParadaActivity.cs" />
     <Compile Include="LoginActivity.cs" />
     <Compile Include="MainActivity.cs" />

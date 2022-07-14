@@ -11,13 +11,13 @@ using System.Text;
 
 namespace PBN
 {
-    [Activity(Label = "addparabusActivity")]
-    public class addparabusActivity : Activity
+    [Activity(Label = "EditarBusActivity")]
+    public class EditarBusActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.ActivityAgregarBus);
+            SetContentView(Resource.Layout.ActivityEditarBus);
             // Create your application here
         }
     }
