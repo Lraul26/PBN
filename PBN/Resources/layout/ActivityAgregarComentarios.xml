@@ -4,49 +4,92 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
+    android:background="@color/background"
     android:padding="15.0dp"
     android:layout_height="match_parent">
 
     <TextView
+        android:textColor="@color/blanco"
         android:gravity="center"
         android:text="@string/txt12"
         android:textStyle="bold"
         android:textAlignment="center"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
-        android:layout_height="85.5dp"
+        android:layout_height="87.5dp"
         android:minWidth="25px"
         android:minHeight="25px"
         android:id="@+id/textView1" />
 	<SearchView
+        android:background="@color/blanco"
 		android:minWidth="25px"
 		android:minHeight="25px"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:id="@+id/searchView1" />
+		android:id="@+id/searchComentario" />
     <ListView
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="match_parent"
-        android:layout_height="300.5dp"
+        android:layout_height="416.5dp"
         android:id="@+id/lvoaradaCom" />
-	<TextView
-		android:layout_width="match_parent"
-		android:textAlignment="center"
-		android:layout_height="wrap_content"
-		android:text="@string/txt5"
-		android:textStyle="bold"
-		android:textAppearance="?android:attr/textAppearanceLarge"
-		android:id="@+id/textView2" />
+     <TextView
+            android:gravity="center"
+            android:textColor="@color/blanco"
+            android:text="@string/txt5"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="match_parent"
+            android:layout_height="61.5dp"
+            android:id="@+id/textView3" />
     <EditText
+        android:textColor="@color/blanco"
         android:layout_width="match_parent"
-        android:layout_height="73.5dp"
-        android:id="@+id/editComentario" />
-    <Button
-        android:layout_gravity="center"
-        android:layout_width="212.5dp"
-        android:layout_height="wrap_content"
+        android:layout_height="62.0dp"
+        android:id="@+id/txtComentario" />
+    <LinearLayout
         android:gravity="center"
-        android:text="@string/btn4"
-        android:id="@+id/button1" />
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="67.0dp"
+        android:id="@+id/linearLayout1">
+        <ImageButton
+            android:background="@color/background"
+            android:contentDescription=""
+            android:src="@drawable/cancelar"
+            android:layout_width="78.5dp"
+            android:layout_height="match_parent"
+            android:id="@+id/btnCancelar" />
+        <ImageButton
+            android:background="@color/background"
+            android:contentDescription=""
+            android:src="@drawable/aceptar"
+            android:layout_width="124.0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/bntAceptar" />
+    </LinearLayout>
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout2" >
+        <TextView
+            android:textColor="@color/blanco"
+            android:text=" Cancelar"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="107.5dp"
+            android:layout_height="match_parent"
+            android:id="@+id/textView4" />
+        <TextView
+            android:textColor="@color/blanco"
+            android:text="Aceptar"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="101.0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/textView5" />
+    </LinearLayout>
 </LinearLayout>

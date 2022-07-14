@@ -17,7 +17,7 @@ namespace PBN
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.ActivityAPB);
+            SetContentView(Resource.Layout.ActivityAgregarBus);
             // Create your application here
         }
     }
