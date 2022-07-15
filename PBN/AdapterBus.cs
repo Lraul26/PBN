@@ -48,7 +48,7 @@ namespace PBN
             txtruta.SetTextColor(Color.LightGray);
 
             TextView cantidad = view.FindViewById<TextView>(Android.Resource.Id.Text2);
-            cantidad.Text ="Cantidad de paradas " + CsGlobal.Parada.Where(x => x.Idbus == item.IdAutoBus).Count().ToString();
+            cantidad.Text ="Cantidad de paradas " + Global.Parada.Where(x => x.Idbus == item.IdAutoBus).Count().ToString();
             cantidad.SetTextColor(Color.White);
             return view;
         }

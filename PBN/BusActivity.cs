@@ -21,7 +21,7 @@ namespace PBN
             SetContentView(Resource.Layout.ActivityPrincipal);
 
             lvbus = FindViewById<ListView>(Resource.Id.lvbus);
-            lvbus.Adapter = new AdapterBus(this, CsGlobal.Autobuces);
+            lvbus.Adapter = new AdapterBus(this, Global.Autobuces);
 
             lvbus.ItemClick += Lvbus_ItemClick;
         }
@@ -29,7 +29,7 @@ namespace PBN
         private void Lvbus_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
             Intent i = new Intent(this, typeof(DetalleBusActivity));
-            AutoBuces bus = CsGlobal.Autobuces[e.Position];
+            AutoBuces bus = Global.Autobuces[e.Position];
             i.PutExtra("id", bus.IdAutoBus);
             StartActivity(i);
         }

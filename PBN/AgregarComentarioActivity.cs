@@ -21,7 +21,7 @@ namespace PBN
             SetContentView(Resource.Layout.ActivityAgregarComentarios);
             lvparada = FindViewById<ListView>(Resource.Id.lvoaradaCom);
 
-            lvparada.Adapter = new AdapterParada(this,CsGlobal.Parada); 
+            lvparada.Adapter = new AdapterParada(this,Global.Parada); 
             
         }
     }

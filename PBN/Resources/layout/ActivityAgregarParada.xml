@@ -6,7 +6,22 @@
     android:background="@color/background"
     android:padding="15.0dp"
     android:layout_height="match_parent">
-    <TextView
+    
+    
+   <ScrollView
+    
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scr">
+
+        <LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/background"
+    android:padding="15.0dp"
+    android:layout_height="match_parent">
+ 
+        <TextView
         android:gravity="center"
         android:textColor="@android:color/white"
         android:text="Agregar Parada"
@@ -65,7 +80,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView11" />
-    <LinearLayout
+  
+        <LinearLayout
         android:gravity="center"
         android:orientation="horizontal"
         android:minWidth="25px"
@@ -132,9 +148,14 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:id="@+id/textView7" />
-
+               
     </LinearLayout>
-    
+     <CheckBox
+            android:text="Estado"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/chkEstado" />
+      
     <TextView
         android:textColor="@android:color/white"
         android:layout_width="match_parent"
@@ -142,11 +163,13 @@
         android:text="Foto"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/textView3" />
+
     <ImageView
         android:src="@drawable/paradapordefecto"
         android:layout_width="match_parent"
         android:layout_height="206.5dp"
         android:id="@+id/ivParada" />
+       
     <LinearLayout
         android:orientation="horizontal"
         android:minWidth="25px"
@@ -154,7 +177,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/linearLayout1">
-        <Button
+       
+            <Button
             android:gravity="center"
             android:layout_margin="5dp"
             android:paddingBottom="5dp"
@@ -183,5 +207,10 @@
             android:layout_height="match_parent"
             android:id="@+id/btnAceptar" />
     </LinearLayout>
-
+   
 </LinearLayout>
+
+    </ScrollView>
+
+    </LinearLayout> 
+

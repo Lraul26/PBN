@@ -59,8 +59,8 @@ namespace PBN
                         }
                         else
                         {
-                            CsGlobal.Usuario.correo = txtCorreo.Text.Trim();
-                            CsGlobal.Usuario.clave = txtClaveUno.Text;
+                            Global.Usuario.correo = txtCorreo.Text.Trim();
+                            Global.Usuario.clave = txtClaveUno.Text;
                         }
 
                         Toast.MakeText(Application.Context, resultado.mensaje, ToastLength.Short).Show();

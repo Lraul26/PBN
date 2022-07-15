@@ -22,13 +22,13 @@ namespace PBN
             // Create your application here
             lvparada = FindViewById<ListView>(Resource.Id.lvparada);
             lvparada.ItemClick += Lvparada_ItemClick;
-            lvparada.Adapter = new AdapterParada(this, CsGlobal.Parada);
+            lvparada.Adapter = new AdapterParada(this, Global.Parada);
         }
 
         private void Lvparada_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
             Intent i = new Intent(this, typeof(ListaParadaActivity));
-            Parada parada = CsGlobal.Parada[e.Position];
+            Parada parada = Global.Parada[e.Position];
             i.PutExtra("id", parada.IdPar);
             StartActivity(i);
         }

@@ -72,7 +72,7 @@
     <Compile Include="AgregarComentarioActivity.cs" />
     <Compile Include="AgregarParadaActivity.cs" />
     <Compile Include="BusActivity.cs" />
-    <Compile Include="CsGlobal.cs" />
+    <Compile Include="Global.cs" />
     <Compile Include="DetalleBusActivity.cs" />
     <Compile Include="DetalleParadaActivity.cs" />
     <Compile Include="ListaParadaActivity.cs" />
@@ -83,7 +83,6 @@
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Splash.cs" />
-    <Compile Include="TemaActivity.cs" />
     <Compile Include="Web References\proxibusnicweb\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -109,6 +108,9 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <None Include="Web References\proxibusnicweb\ResultadoSW.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\proxibusnicweb\UsuariosWS1.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
   </ItemGroup>
@@ -163,9 +165,6 @@
       <Version>28.0.0.3</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Android.Support.v7.AppCompat">
-      <Version>28.0.0.3</Version>
-    </PackageReference>
-    <PackageReference Include="Xamarin.Android.Support.v7.CardView">
       <Version>28.0.0.3</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.4.2.1" />
@@ -521,12 +520,10 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\ActivityTema.xml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\ParadaPorDefecto.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\ParadaPorDefecto.png" />
+    <AndroidResource Include="Resources\drawable\Ruta.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

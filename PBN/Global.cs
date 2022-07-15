@@ -11,17 +11,18 @@ using System.Text;
 
 namespace PBN
 {
-    internal class CsGlobal
+
+    internal class Global
     {
-        
-     public static class Usuario
+
+        public static class Usuario
         {
-          public static string correo;
-          public static string clave;
+            public static string correo;
+            public static string clave;
 
-      
+
         }
-
+    
         public static List<AutoBuces> Autobuces = new List<AutoBuces>()
         {
             new AutoBuces (1,106),

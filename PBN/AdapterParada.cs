@@ -48,7 +48,7 @@ namespace PBN
             parada.SetTextColor(Color.LightGray);
 
             TextView cantidad = view.FindViewById<TextView>(Android.Resource.Id.Text2);
-            cantidad.Text = "Cabtidad de Buces " + CsGlobal.Autobuces.Where(x => x.IdAutoBus == item.Idbus).Count().ToString();
+            cantidad.Text = "Cabtidad de Buces " + Global.Autobuces.Where(x => x.IdAutoBus == item.Idbus).Count().ToString();
             cantidad.SetTextColor(Color.White);
             return view;
         }

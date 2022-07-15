@@ -72,11 +72,10 @@ namespace PBN
 
 
                         }
-                        else
-                        {
-                            CsGlobal.Usuario.correo = correo;
-                            CsGlobal.Usuario.clave = clave;
-                        }
+                       
+                            Global.Usuario.correo = correo;
+                            Global.Usuario.clave = clave;
+                        
 
                         var res = new Intent(this, typeof(MainActivity));
                         StartActivity(res);

@@ -23,10 +23,13 @@ namespace PBN
 
             ISharedPreferences preferencia = Application.GetSharedPreferences("informacion", FileCreationMode.Private);
             bool recordar = preferencia.GetBoolean("recordar", false);
+            string correo = preferencia.GetString("correo", "");
+            string clave = preferencia.GetString("clave", "");
 
             if (recordar)
             {
-
+                Global.Usuario.correo = correo;
+                Global.Usuario.clave = clave;
                 Intent intent = new Intent(this, typeof(MainActivity));
                 StartActivity(intent);
             }

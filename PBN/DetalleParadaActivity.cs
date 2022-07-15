@@ -22,7 +22,7 @@ namespace PBN
             SetContentView(Resource.Layout.ActivityDetalleParada);
 
             int id = Intent.GetIntExtra("id", 0);
-            parada = CsGlobal.Parada.Where(x => x.IdPar == id).FirstOrDefault();
+            parada = Global.Parada.Where(x => x.IdPar == id).FirstOrDefault();
 
             NomParada = FindViewById<TextView>(Resource.Id.txtparada);
             NomParada.Text = parada.NombrePar;

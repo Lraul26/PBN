@@ -24,8 +24,8 @@ namespace PBN
         ImageView FotoParada;
         Button BtnCamara,BtnGaleria ,BtnGuardar;
         private byte[] bitmapData;
-        string Usuario = CsGlobal.Usuario.correo;
-        bool Activo = true;
+        string Usuario = Global.Usuario.correo;
+        CheckBox estado;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -37,12 +37,13 @@ namespace PBN
             BtnGuardar = FindViewById<Button>(Resource.Id.btnAceptar);
 
             Descripcion = FindViewById<EditText>(Resource.Id.etDescrip);
-            Alias = FindViewById<EditText>(Resource.Id.etAlias); Alias.Text = "N/A";
-            Longitu = FindViewById<EditText>(Resource.Id.etlatitud); Longitu.Text  = "N/A";
-            Latitud = FindViewById<EditText>(Resource.Id.etlongitud); Latitud.Text = "N/A";
+            Alias = FindViewById<EditText>(Resource.Id.etAlias); 
+            Longitu = FindViewById<EditText>(Resource.Id.etlatitud); //Longitu.Text  = "N/A";
+            Latitud = FindViewById<EditText>(Resource.Id.etlongitud); //Latitud.Text = "N/A";
 
-            FotoParada = FindViewById<ImageView>(Resource.Id.ivParada); 
+            FotoParada = FindViewById<ImageView>(Resource.Id.ivParada);
 
+            estado = FindViewById<CheckBox>(Resource.Id.chkEstado);
             BtnCamara.Click += BtnCamara_Click;
             BtnGuardar.Click += BtnGuardar_Click;
         }
@@ -51,10 +52,47 @@ namespace PBN
         {
             if (validarVacios())
             {
+                serve.Descripcion = Descripcion.Text.Trim();
+                serve.Alias = Alias.Text.Trim();
+                serve.FotoParada = bitmapData;
+                serve.Estado = estado.Checked;
                
+                serve.Latitud = Latitud.Text.Trim();
+               
+                serve.Longitud = Longitu.Text.Trim();
+                serve.FechaCreacion = DateTime.Now;
+                serve.UsuarioCreacion = Global.Usuario.correo;
+                serve.FechaModificacion = DateTime.Now;
+                serve.UsuarioModificacion = Global.Usuario.correo;
+
+                if (db.AgregarParada(serve)>0){
+                    Toast.MakeText(Application.Context, "Registro exitoso", ToastLength.Short).Show();
+                    limpiar();
+                }
+                else
+                {
+                    Toast.MakeText(Application.Context, "Registro incorrecto", ToastLength.Short).Show();
+                }
             }
         }
+        private void limpiar()
+        {
+            Descripcion.Text = "";
+            Alias.Text = "";
 
+            FotoParada.SetImageBitmap(null);
+            bitmapData = null;
+            FotoParada.SetImageResource(Resource.Drawable.ParadaPorDefecto);
+            
+            
+            estado.Checked = false;
+
+           Latitud.Text = "";
+
+            Longitu.Text = "";
+ 
+
+        }
         private void Db_AgregarParadaCompleted(object sender, proxibusnicweb.AgregarParadaCompletedEventArgs e)
         {
             
