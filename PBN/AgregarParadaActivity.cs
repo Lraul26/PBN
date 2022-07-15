@@ -38,7 +38,7 @@ namespace PBN
 
             Descripcion = FindViewById<EditText>(Resource.Id.etDescrip);
             Alias = FindViewById<EditText>(Resource.Id.etAlias); 
-            Longitud = FindViewById<EditText>(Resource.Id.etlatitud); 
+           // Longitud = FindViewById<EditText>(Resource.Id.etlatitud); 
             Latitud = FindViewById<EditText>(Resource.Id.etlongitud); 
 
             FotoParada = FindViewById<ImageView>(Resource.Id.ivParada);
@@ -55,12 +55,12 @@ namespace PBN
                 serve.Descripcion = Descripcion.Text;
                 serve.Alias = Alias.Text;
                 serve.FotoParada = bitmapData;
-                serve.Estado = Activo;
-                serve.Longitud = Longitud.Text;
+               // serve.Estado = Activo;
+              //  serve.Longitud = Longitud.Text;
                 serve.Latitud = Latitud.Text;
-                serve.FechaCreacion = DateTime.Now;
+                //serve.FechaCreacion = DateTime.Now;
                 serve.UsuarioCreacion = "admin@gmail.com";
-                serve.FechaModificacion = DateTime.Now;
+              //  serve.FechaModificacion = DateTime.Now;
                 serve.UsuarioModificacion = "admin@gmail.com";
 
                 Toast.MakeText(Application.Context, "Registro de Parada Exitoso"+ db.AgregarParada(serve), ToastLength.Short).Show();
@@ -97,7 +97,7 @@ namespace PBN
             }
             if (Alias.Text == String.Empty)
             {
-                Longitud.Text = null;
+              //  Longitud.Text = null;
                 return true;
             }
             if (Alias.Text == String.Empty)

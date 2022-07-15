@@ -85,41 +85,37 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:complexType name="ArrayOfBusParadaWS">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="BusParadaWS" nillable="true" type="tns:BusParadaWS" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="BusParadaWS">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="ParadaId" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="BusId" type="s:int" />
-        </s:sequence>
-      </s:complexType>
-      <s:element name="ListarUsuarios">
-        <s:complexType />
-      </s:element>
-      <s:element name="ListarUsuariosResponse">
+      <s:element name="EditarParadasResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ListarUsuariosResult" type="tns:ArrayOfUsuariosWS" />
+            <s:element minOccurs="1" maxOccurs="1" name="EditarParadasResult" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:complexType name="ArrayOfUsuariosWS">
+      <s:element name="AgregarSugerencia">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sugerenciaWS" type="tns:SugerenciaWS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SugerenciaWS">
         <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="UsuariosWS" nillable="true" type="tns:UsuariosWS" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DescripcionSugerencia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UsuarioCreacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaCreacion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ParadaId" type="s:int" />
         </s:sequence>
       </s:complexType>
-      <s:complexType name="UsuariosWS">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Correo" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Clave" type="s:string" />
-        </s:sequence>
-      </s:complexType>
-      <s:element name="EditarBusParadas">
+      <s:element name="AgregarSugerenciaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AgregarSugerenciaResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarBusParadas">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="busParadaWS" type="tns:BusParadaWS" />
@@ -191,7 +187,7 @@
       <s:element name="EliminarBusesParadasResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="AgregarBusParadasResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="EliminarBusesParadasResult" type="tns:ResultadoSW" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -239,12 +235,20 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:complexType name="ResultadoSW">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="mensaje" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="respuesta" type="s:boolean" />
-        </s:sequence>
-      </s:complexType>
+      <s:element name="EliminarUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EliminarUsuarioResult" type="tns:ResultadoSW" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="CrearUsuarioRol">
         <s:complexType>
           <s:sequence>
@@ -371,42 +375,6 @@
   <wsdl:message name="AgregarParadaSoapOut">
     <wsdl:part name="parameters" element="tns:AgregarParadaResponse" />
   </wsdl:message>
-  <wsdl:message name="ListarParadaSoapIn">
-    <wsdl:part name="parameters" element="tns:ListarParada" />
-  </wsdl:message>
-  <wsdl:message name="ListarParadaSoapOut">
-    <wsdl:part name="parameters" element="tns:ListarParadaResponse" />
-  </wsdl:message>
-  <wsdl:message name="ListarParadaActivasSoapIn">
-    <wsdl:part name="parameters" element="tns:ListarParadaActivas" />
-  </wsdl:message>
-  <wsdl:message name="ListarParadaActivasSoapOut">
-    <wsdl:part name="parameters" element="tns:ListarParadaActivasResponse" />
-  </wsdl:message>
-  <wsdl:message name="ListarBusSoapIn">
-    <wsdl:part name="parameters" element="tns:ListarBus" />
-  </wsdl:message>
-  <wsdl:message name="ListarBusSoapOut">
-    <wsdl:part name="parameters" element="tns:ListarBusResponse" />
-  </wsdl:message>
-  <wsdl:message name="ListarBusActivosSoapIn">
-    <wsdl:part name="parameters" element="tns:ListarBusActivos" />
-  </wsdl:message>
-  <wsdl:message name="ListarBusActivosSoapOut">
-    <wsdl:part name="parameters" element="tns:ListarBusActivosResponse" />
-  </wsdl:message>
-  <wsdl:message name="ListarBusParadaSoapIn">
-    <wsdl:part name="parameters" element="tns:ListarBusParada" />
-  </wsdl:message>
-  <wsdl:message name="ListarBusParadaSoapOut">
-    <wsdl:part name="parameters" element="tns:ListarBusParadaResponse" />
-  </wsdl:message>
-  <wsdl:message name="ListarUsuariosSoapIn">
-    <wsdl:part name="parameters" element="tns:ListarUsuarios" />
-  </wsdl:message>
-  <wsdl:message name="ListarUsuariosSoapOut">
-    <wsdl:part name="parameters" element="tns:ListarUsuariosResponse" />
-  </wsdl:message>
   <wsdl:message name="EditarBusParadasSoapIn">
     <wsdl:part name="parameters" element="tns:EditarBusParadas" />
   </wsdl:message>
@@ -479,6 +447,12 @@
   <wsdl:message name="CrearUsuarioSoapOut">
     <wsdl:part name="parameters" element="tns:CrearUsuarioResponse" />
   </wsdl:message>
+  <wsdl:message name="EliminarUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="EliminarUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarUsuarioResponse" />
+  </wsdl:message>
   <wsdl:message name="CrearUsuarioRolSoapIn">
     <wsdl:part name="parameters" element="tns:CrearUsuarioRol" />
   </wsdl:message>
@@ -532,30 +506,6 @@
       <wsdl:input message="tns:AgregarParadaSoapIn" />
       <wsdl:output message="tns:AgregarParadaSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="ListarParada">
-      <wsdl:input message="tns:ListarParadaSoapIn" />
-      <wsdl:output message="tns:ListarParadaSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="ListarParadaActivas">
-      <wsdl:input message="tns:ListarParadaActivasSoapIn" />
-      <wsdl:output message="tns:ListarParadaActivasSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="ListarBus">
-      <wsdl:input message="tns:ListarBusSoapIn" />
-      <wsdl:output message="tns:ListarBusSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="ListarBusActivos">
-      <wsdl:input message="tns:ListarBusActivosSoapIn" />
-      <wsdl:output message="tns:ListarBusActivosSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="ListarBusParada">
-      <wsdl:input message="tns:ListarBusParadaSoapIn" />
-      <wsdl:output message="tns:ListarBusParadaSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="ListarUsuarios">
-      <wsdl:input message="tns:ListarUsuariosSoapIn" />
-      <wsdl:output message="tns:ListarUsuariosSoapOut" />
-    </wsdl:operation>
     <wsdl:operation name="EditarBusParadas">
       <wsdl:input message="tns:EditarBusParadasSoapIn" />
       <wsdl:output message="tns:EditarBusParadasSoapOut" />
@@ -603,6 +553,10 @@
     <wsdl:operation name="CrearUsuario">
       <wsdl:input message="tns:CrearUsuarioSoapIn" />
       <wsdl:output message="tns:CrearUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarUsuario">
+      <wsdl:input message="tns:EliminarUsuarioSoapIn" />
+      <wsdl:output message="tns:EliminarUsuarioSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="CrearUsuarioRol">
       <wsdl:input message="tns:CrearUsuarioRolSoapIn" />
@@ -693,8 +647,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="ListarUsuarios">
-      <soap:operation soapAction="http://tempuri.org/ListarUsuarios" style="document" />
+    <wsdl:operation name="AgregarBus">
+      <soap:operation soapAction="http://tempuri.org/AgregarBus" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -702,8 +656,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="EditarBusParadas">
-      <soap:operation soapAction="http://tempuri.org/EditarBusParadas" style="document" />
+    <wsdl:operation name="EliminarBus">
+      <soap:operation soapAction="http://tempuri.org/EliminarBus" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -758,6 +712,15 @@
     </wsdl:operation>
     <wsdl:operation name="EliminarUsuario">
       <soap:operation soapAction="http://tempuri.org/EliminarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearUsuarioRol">
+      <soap:operation soapAction="http://tempuri.org/CrearUsuarioRol" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -820,7 +783,19 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ListarUsuarios">
-      <soap12:operation soapAction="http://tempuri.org/ListarUsuarios" style="document" />
+      <soap:operation soapAction="http://tempuri.org/ListarUsuarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ProxiBusNicWSSoap12" type="tns:ProxiBusNicWSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AgregarParada">
+      <soap12:operation soapAction="http://tempuri.org/AgregarParada" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -929,6 +904,15 @@
     </wsdl:operation>
     <wsdl:operation name="CrearUsuario">
       <soap12:operation soapAction="http://tempuri.org/CrearUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarUsuario">
+      <soap12:operation soapAction="http://tempuri.org/EliminarUsuario" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
