@@ -7,7 +7,6 @@
     android:background="@color/background"
     android:padding="15.0dp"
     android:layout_height="match_parent">
-
     <TextView
         android:textColor="@color/blanco"
         android:gravity="center"

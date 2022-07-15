@@ -46,9 +46,9 @@ namespace PBN
             BtnGuardar = FindViewById<Button>(Resource.Id.btnAceptar);
 
             Descripcion = FindViewById<EditText>(Resource.Id.etDescrip);
-            Alias = FindViewById<EditText>(Resource.Id.etAlias); Alias.Text = "N/A";
-            Longitud = FindViewById<EditText>(Resource.Id.etlatitud); Longitud.Text  = "N/A";
-            Latitud = FindViewById<EditText>(Resource.Id.etlongitud); Latitud.Text = "N/A";
+            Alias = FindViewById<EditText>(Resource.Id.etAlias); 
+            Longitud = FindViewById<EditText>(Resource.Id.etlatitud); 
+            Latitud = FindViewById<EditText>(Resource.Id.etlongitud); 
 
             FotoParada = FindViewById<ImageView>(Resource.Id.ivParada);
 
@@ -63,18 +63,19 @@ namespace PBN
         {
             if (validarVacios())
             {
-                serve.Descripcion = Descripcion.Text;
-                serve.Alias = Alias.Text;
-                serve.FotoParada = bitmapData;
-                serve.Estado = Activo;
-                serve.Longitud = Longitud.Text;
-                serve.Latitud = Latitud.Text;
-                serve.FechaCreacion = DateTime.Now;
-                serve.UsuarioCreacion = "admin@gmail.com";
-                serve.FechaModificacion = DateTime.Now;
-                serve.UsuarioModificacion = "admin@gmail.com";
-
-                Toast.MakeText(Application.Context, "Registro de Parada Exitoso"+ db.AgregarParada(serve), ToastLength.Short).Show();
+                if (ValidarNulos())
+                {
+                    serve.Descripcion = Descripcion.Text;
+                    serve.Alias = Alias.Text;
+                    serve.FotoParada = bitmapData;
+                    serve.Estado = Activo;
+                    serve.Longitud = Longitud.Text;
+                    serve.Latitud = Latitud.Text;
+                    serve.UsuarioCreacion = "admin@gmail.com";
+                    serve.UsuarioModificacion = "admin@gmail.com";
+                    Toast.MakeText(Application.Context, "Registro de Parada Exitoso" + db.AgregarParada(serve), ToastLength.Short).Show();
+                    limpiar();
+                }
             }
         }
   
@@ -95,6 +96,31 @@ namespace PBN
                 bitmap.Compress(Bitmap.CompressFormat.Png, 0, stream);
                 bitmapData = stream.ToArray();
             }
+        }
+
+        public bool ValidarNulos()
+        {
+            if(Alias.Text == String.Empty)
+            {
+                Alias.Text = null;
+                return true;
+            }
+            if (Alias.Text == String.Empty)
+            {
+                Longitud.Text = null;
+                return true;
+            }
+            if (Alias.Text == String.Empty)
+            {
+                Latitud.Text = null;
+                return true;
+            }
+             return true;
+        }
+
+        private void limpiar()
+        {
+            Descripcion.Text = String.Empty;
         }
         private bool validarVacios()
         {
