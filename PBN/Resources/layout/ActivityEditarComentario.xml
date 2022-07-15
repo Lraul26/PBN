@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/background"
+    android:padding="15.0dp"
+    android:layout_height="match_parent">
+    <TextView
+        android:textColor="@color/blanco"
+        android:gravity="center"
+        android:text="Editar Comentario"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:id="@+id/textView1" />
+    <TextView
+        android:textColor="@color/blanco"
+        android:gravity="center"
+        android:text="Aqui retornara el nombre de la parada comentada"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="135.0dp"
+        android:id="@+id/textView2" />
+    <EditText
+        android:textColorHint="@color/blanco"
+        android:hint="aqui retorna el comentario"
+        android:inputType="textMultiLine"
+        android:layout_width="match_parent"
+        android:layout_height="74.5dp"
+        android:id="@+id/editText1" />
+    <TextView
+        android:text=""
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView5" />
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1" >
+        <ImageButton
+            android:contentDescription=""
+            android:background="@color/background"
+            android:src="@drawable/cancelar"
+            android:layout_width="83.5dp"
+            android:layout_height="match_parent"
+            android:id="@+id/imageButton1" />
+        <ImageButton
+            android:contentDescription=""
+            android:background="@color/background"
+            android:src="@drawable/aceptar"
+            android:layout_width="76.0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/imageButton2" />
+    </LinearLayout>
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout2">
+        <TextView
+            android:textColor="@color/blanco"
+            android:text="@string/txt28"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="86.5dp"
+            android:layout_height="match_parent"
+            android:id="@+id/textView3" />
+        <TextView
+            android:textColor="@color/blanco"
+            android:text="@string/txt29"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="68.5dp"
+            android:layout_height="match_parent"
+            android:id="@+id/textView4" />
+    </LinearLayout>
+</LinearLayout>

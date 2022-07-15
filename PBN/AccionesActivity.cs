@@ -27,6 +27,27 @@ namespace PBN
             EditarParada = FindViewById<ImageButton>(Resource.Id.IbtnEditarParada);
 
             AgregarParada.Click += AgregarParada_Click;
+            AgregarBus.Click += AgregarBus_Click;
+            EditarBus.Click += EditarBus_Click;
+            EditarParada.Click += EditarParada_Click;
+        }
+
+        private void EditarParada_Click(object sender, EventArgs e)
+        {
+            var intent = new Intent(this, typeof(EditarParadaActivity));
+            StartActivity(intent);
+        }
+
+        private void EditarBus_Click(object sender, EventArgs e)
+        {
+            var intent = new Intent(this, typeof(EditarBusActivity));
+            StartActivity(intent);
+        }
+
+        private void AgregarBus_Click(object sender, EventArgs e)
+        {
+            var intent = new Intent(this, typeof(AgregarBusActivity));
+            StartActivity(intent);
         }
 
         private void AgregarParada_Click(object sender, EventArgs e)

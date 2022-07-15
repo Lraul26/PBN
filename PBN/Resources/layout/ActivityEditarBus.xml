@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+     android:background="@color/background"
+    android:padding="15.0dp"
+    android:layout_height="match_parent">
+      <TextView
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:text="@string/txt33"
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="59.0dp"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:id="@+id/textView1" />
+    <EditText
+        android:textColor="@color/blanco"
+        android:layout_width="match_parent"
+        android:layout_height="60.5dp"
+        android:id="@+id/txtEditarNumeroRuta" />
+    <TextView
+        android:gravity="center"
+        android:textColor="@color/blanco"
+        android:text="@string/txt34"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="52.5dp"
+        android:id="@+id/textView2" />
+    <ListView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="233.0dp"
+        android:id="@+id/ltEditarParadaRuta" />
+    <ScrollView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView1">
+        <TableLayout
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tableLayout1">
+            <TextView
+                android:textColor="@color/blanco"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/txt30"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/textView3" />
+            <TableRow
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/tableRow1">
+                <ImageView
+                    android:layout_width="546.0dp"
+                    android:layout_height="187.0dp"
+                    android:contentDescription=""
+                    android:src="@drawable/ruta"
+                    android:id="@+id/imvEditarFotoRuta" />
+            </TableRow>
+            <TableRow
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/tableRow2">
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:id="@+id/linearLayout1" >
+                    <ImageButton
+                        android:background="@color/background"
+                        android:contentDescription=""
+                        android:src="@drawable/galeria"
+                        android:layout_width="175.5dp"
+                        android:layout_height="match_parent"
+                        android:minWidth="25px"
+                        android:minHeight="25px"
+                        android:id="@+id/btnEditarGaleriaBus" />
+                    <ImageButton
+                        android:background="@color/background"
+                        android:contentDescription=""
+                        android:src="@drawable/camara"
+                        android:layout_width="102.5dp"
+                        android:layout_height="60.0dp"
+                        android:id="@+id/btnEditarCamaraBus" />
+                </LinearLayout>
+            </TableRow>
+            <LinearLayout
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="42.0dp"
+                android:orientation="horizontal"
+                android:id="@+id/linearLayout3">
+                <TextView
+                    android:textColor="@color/blanco"
+                    android:text="@string/txt31"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:layout_width="166.0dp"
+                    android:layout_height="match_parent"
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:id="@+id/textView4" />
+                <TextView
+                    android:textColor="@color/blanco"
+                    android:text="@string/txt32"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/textView5" />
+            </LinearLayout>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/tableRow3">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="88.5dp"
+                    android:orientation="horizontal"
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:id="@+id/linearLayout2">
+                    <ImageButton
+                        android:background="@color/background"
+                        android:contentDescription=""
+                        android:src="@drawable/cancelar"
+                        android:layout_width="86.5dp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/btnEditarCancelarR" />
+                    <ImageButton
+                        android:background="@color/background"
+                        android:contentDescription=""
+                        android:layout_width="90.0dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/aceptar"
+                        android:id="@+id/btnEditarAceptarR" />
+                </LinearLayout>
+            </TableRow>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:id="@+id/linearLayout4" >
+                <TextView
+                    android:textColor="@color/blanco"
+                    android:text="@string/txt28"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:layout_width="101.5dp"
+                    android:layout_height="match_parent"
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:id="@+id/textView6" />
+                <TextView
+                    android:textColor="@color/blanco"
+                    android:text="@string/txt29"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:layout_width="90.5dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/textView7" />
+            </LinearLayout>
+        </TableLayout>
+    </ScrollView>
+</LinearLayout>

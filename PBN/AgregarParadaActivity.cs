@@ -38,8 +38,8 @@ namespace PBN
 
             Descripcion = FindViewById<EditText>(Resource.Id.etDescrip);
             Alias = FindViewById<EditText>(Resource.Id.etAlias); 
-            Longitu = FindViewById<EditText>(Resource.Id.etlatitud); //Longitu.Text  = "N/A";
-            Latitud = FindViewById<EditText>(Resource.Id.etlongitud); //Latitud.Text = "N/A";
+            Longitud = FindViewById<EditText>(Resource.Id.etlatitud); 
+            Latitud = FindViewById<EditText>(Resource.Id.etlongitud); 
 
             FotoParada = FindViewById<ImageView>(Resource.Id.ivParada);
 
@@ -52,46 +52,19 @@ namespace PBN
         {
             if (validarVacios())
             {
-                serve.Descripcion = Descripcion.Text.Trim();
-                serve.Alias = Alias.Text.Trim();
+                serve.Descripcion = Descripcion.Text;
+                serve.Alias = Alias.Text;
                 serve.FotoParada = bitmapData;
-                serve.Estado = estado.Checked;
-               
-                serve.Latitud = Latitud.Text.Trim();
-               
-                serve.Longitud = Longitu.Text.Trim();
+                serve.Estado = Activo;
+                serve.Longitud = Longitud.Text;
+                serve.Latitud = Latitud.Text;
                 serve.FechaCreacion = DateTime.Now;
-                serve.UsuarioCreacion = Global.Usuario.correo;
+                serve.UsuarioCreacion = "admin@gmail.com";
                 serve.FechaModificacion = DateTime.Now;
-                serve.UsuarioModificacion = Global.Usuario.correo;
+                serve.UsuarioModificacion = "admin@gmail.com";
 
-                if (db.AgregarParada(serve)>0){
-                    Toast.MakeText(Application.Context, "Registro exitoso", ToastLength.Short).Show();
-                    limpiar();
-                }
-                else
-                {
-                    Toast.MakeText(Application.Context, "Registro incorrecto", ToastLength.Short).Show();
-                }
+                Toast.MakeText(Application.Context, "Registro de Parada Exitoso"+ db.AgregarParada(serve), ToastLength.Short).Show();
             }
-        }
-        private void limpiar()
-        {
-            Descripcion.Text = "";
-            Alias.Text = "";
-
-            FotoParada.SetImageBitmap(null);
-            bitmapData = null;
-            FotoParada.SetImageResource(Resource.Drawable.ParadaPorDefecto);
-            
-            
-            estado.Checked = false;
-
-           Latitud.Text = "";
-
-            Longitu.Text = "";
- 
-
         }
         private void Db_AgregarParadaCompleted(object sender, proxibusnicweb.AgregarParadaCompletedEventArgs e)
         {
@@ -113,6 +86,31 @@ namespace PBN
                 bitmap.Compress(Bitmap.CompressFormat.Png, 0, stream);
                 bitmapData = stream.ToArray();
             }
+        }
+
+        public bool ValidarNulos()
+        {
+            if(Alias.Text == String.Empty)
+            {
+                Alias.Text = null;
+                return true;
+            }
+            if (Alias.Text == String.Empty)
+            {
+                Longitud.Text = null;
+                return true;
+            }
+            if (Alias.Text == String.Empty)
+            {
+                Latitud.Text = null;
+                return true;
+            }
+             return true;
+        }
+
+        private void limpiar()
+        {
+            Descripcion.Text = String.Empty;
         }
         private bool validarVacios()
         {

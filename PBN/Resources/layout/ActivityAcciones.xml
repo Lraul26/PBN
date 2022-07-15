@@ -5,10 +5,9 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:background="@color/background"
-    android:padding="15.0dp"
+    android:padding="15.1dp"
     android:layout_height="match_parent">
     <TextView
-        android:textStyle="italic"
         android:textColor="@color/blanco"
         android:gravity="center"
         android:text="@string/txt17"
@@ -95,7 +94,7 @@
                 android:textColor="@color/blanco"
                 android:textSize="18dp"
                 android:gravity="center"
-                android:text="@string/txt15"
+                android:text="@string/txt16"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:id="@+id/textView5"
                 android:layout_height="wrap_content"
