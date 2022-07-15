@@ -55,8 +55,6 @@ namespace PBN.proxibusnicweb {
         
         private System.Threading.SendOrPostCallback CrearUsuarioOperationCompleted;
         
-        private System.Threading.SendOrPostCallback EliminarUsuarioOperationCompleted;
-        
         private System.Threading.SendOrPostCallback CrearUsuarioRolOperationCompleted;
         
         private System.Threading.SendOrPostCallback LoginOperationCompleted;
@@ -115,6 +113,24 @@ namespace PBN.proxibusnicweb {
         public event AgregarParadaCompletedEventHandler AgregarParadaCompleted;
         
         /// <remarks/>
+        public event ListarParadaCompletedEventHandler ListarParadaCompleted;
+        
+        /// <remarks/>
+        public event ListarParadaActivasCompletedEventHandler ListarParadaActivasCompleted;
+        
+        /// <remarks/>
+        public event ListarBusCompletedEventHandler ListarBusCompleted;
+        
+        /// <remarks/>
+        public event ListarBusActivosCompletedEventHandler ListarBusActivosCompleted;
+        
+        /// <remarks/>
+        public event ListarBusParadaCompletedEventHandler ListarBusParadaCompleted;
+        
+        /// <remarks/>
+        public event ListarUsuariosCompletedEventHandler ListarUsuariosCompleted;
+        
+        /// <remarks/>
         public event EditarBusParadasCompletedEventHandler EditarBusParadasCompleted;
         
         /// <remarks/>
@@ -139,10 +155,10 @@ namespace PBN.proxibusnicweb {
         public event EliminarParadaCompletedEventHandler EliminarParadaCompleted;
         
         /// <remarks/>
-        public event EliminarBusesParadasCompletedEventHandler EliminarBusesParadasCompleted;
+        public event CrearUsuarioRolCompletedEventHandler CrearUsuarioRolCompleted;
         
         /// <remarks/>
-        public event EliminaraSugerenciasCompletedEventHandler EliminaraSugerenciasCompleted;
+        public event LoginCompletedEventHandler LoginCompleted;
         
         /// <remarks/>
         public event CambiarClaveCompletedEventHandler CambiarClaveCompleted;
@@ -178,31 +194,29 @@ namespace PBN.proxibusnicweb {
         public event ListarUsuariosCompletedEventHandler ListarUsuariosCompleted;
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/AgregarParada", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public int AgregarParada(ParadasWS paradasWS) {
-            object[] results = this.Invoke("AgregarParada", new object[] {
-                        paradasWS});
-            return ((int)(results[0]));
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ListarUsuarios", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public UsuariosWS[] ListarUsuarios() {
+            object[] results = this.Invoke("ListarUsuarios", new object[0]);
+            return ((UsuariosWS[])(results[0]));
         }
         
         /// <remarks/>
-        public void AgregarParadaAsync(ParadasWS paradasWS) {
-            this.AgregarParadaAsync(paradasWS, null);
+        public void ListarUsuariosAsync() {
+            this.ListarUsuariosAsync(null);
         }
         
         /// <remarks/>
-        public void AgregarParadaAsync(ParadasWS paradasWS, object userState) {
-            if ((this.AgregarParadaOperationCompleted == null)) {
-                this.AgregarParadaOperationCompleted = new System.Threading.SendOrPostCallback(this.OnAgregarParadaOperationCompleted);
+        public void ListarUsuariosAsync(object userState) {
+            if ((this.ListarUsuariosOperationCompleted == null)) {
+                this.ListarUsuariosOperationCompleted = new System.Threading.SendOrPostCallback(this.OnListarUsuariosOperationCompleted);
             }
-            this.InvokeAsync("AgregarParada", new object[] {
-                        paradasWS}, this.AgregarParadaOperationCompleted, userState);
+            this.InvokeAsync("ListarUsuarios", new object[0], this.ListarUsuariosOperationCompleted, userState);
         }
         
-        private void OnAgregarParadaOperationCompleted(object arg) {
-            if ((this.AgregarParadaCompleted != null)) {
+        private void OnListarUsuariosOperationCompleted(object arg) {
+            if ((this.ListarUsuariosCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.AgregarParadaCompleted(this, new AgregarParadaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.ListarUsuariosCompleted(this, new ListarUsuariosCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -324,10 +338,10 @@ namespace PBN.proxibusnicweb {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/AgregarBusParadas", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public int AgregarBusParadas(BusParadaWS busParadaWS) {
+        public bool AgregarBusParadas(BusParadaWS busParadaWS) {
             object[] results = this.Invoke("AgregarBusParadas", new object[] {
                         busParadaWS});
-            return ((int)(results[0]));
+            return ((bool)(results[0]));
         }
         
         /// <remarks/>
@@ -555,35 +569,6 @@ namespace PBN.proxibusnicweb {
             if ((this.CrearUsuarioCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.CrearUsuarioCompleted(this, new CrearUsuarioCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/EliminarUsuario", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public ResultadoSW EliminarUsuario(string Email) {
-            object[] results = this.Invoke("EliminarUsuario", new object[] {
-                        Email});
-            return ((ResultadoSW)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void EliminarUsuarioAsync(string Email) {
-            this.EliminarUsuarioAsync(Email, null);
-        }
-        
-        /// <remarks/>
-        public void EliminarUsuarioAsync(string Email, object userState) {
-            if ((this.EliminarUsuarioOperationCompleted == null)) {
-                this.EliminarUsuarioOperationCompleted = new System.Threading.SendOrPostCallback(this.OnEliminarUsuarioOperationCompleted);
-            }
-            this.InvokeAsync("EliminarUsuario", new object[] {
-                        Email}, this.EliminarUsuarioOperationCompleted, userState);
-        }
-        
-        private void OnEliminarUsuarioOperationCompleted(object arg) {
-            if ((this.EliminarUsuarioCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.EliminarUsuarioCompleted(this, new EliminarUsuarioCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -1127,26 +1112,16 @@ namespace PBN.proxibusnicweb {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class BusWS {
+    public partial class UsuariosWS {
         
-        private int idField;
+        private string idField;
         
-        private string numeroRutaField;
+        private string correoField;
         
-        private bool estadoField;
-        
-        private byte[] fotoBusField;
-        
-        private string fechaCreacionField;
-        
-        private string usuarioCreacionField;
-        
-        private string fechaModificacionField;
-        
-        private string usuarioModificacionField;
+        private string claveField;
         
         /// <remarks/>
-        public int Id {
+        public string Id {
             get {
                 return this.idField;
             }
@@ -1156,73 +1131,22 @@ namespace PBN.proxibusnicweb {
         }
         
         /// <remarks/>
-        public string NumeroRuta {
+        public string Correo {
             get {
-                return this.numeroRutaField;
+                return this.correoField;
             }
             set {
-                this.numeroRutaField = value;
+                this.correoField = value;
             }
         }
         
         /// <remarks/>
-        public bool Estado {
+        public string Clave {
             get {
-                return this.estadoField;
+                return this.claveField;
             }
             set {
-                this.estadoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
-        public byte[] FotoBus {
-            get {
-                return this.fotoBusField;
-            }
-            set {
-                this.fotoBusField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string FechaCreacion {
-            get {
-                return this.fechaCreacionField;
-            }
-            set {
-                this.fechaCreacionField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string UsuarioCreacion {
-            get {
-                return this.usuarioCreacionField;
-            }
-            set {
-                this.usuarioCreacionField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string FechaModificacion {
-            get {
-                return this.fechaModificacionField;
-            }
-            set {
-                this.fechaModificacionField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string UsuarioModificacion {
-            get {
-                return this.usuarioModificacionField;
-            }
-            set {
-                this.usuarioModificacionField = value;
+                this.claveField = value;
             }
         }
     }
@@ -1560,33 +1484,33 @@ namespace PBN.proxibusnicweb {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void CambiarClaveCompletedEventHandler(object sender, CambiarClaveCompletedEventArgs e);
+    public delegate void ListarUsuariosCompletedEventHandler(object sender, ListarUsuariosCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class CambiarClaveCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class ListarUsuariosCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        internal CambiarClaveCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        internal ListarUsuariosCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
         
         /// <remarks/>
-        public bool Result {
+        public UsuariosWS[] Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[0]));
+                return ((UsuariosWS[])(this.results[0]));
             }
         }
     }
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void CrearUsuarioCompletedEventHandler(object sender, CrearUsuarioCompletedEventArgs e);
+    public delegate void EditarBusParadasCompletedEventHandler(object sender, EditarBusParadasCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
@@ -1706,10 +1630,10 @@ namespace PBN.proxibusnicweb {
         }
         
         /// <remarks/>
-        public ParadasWS[] Result {
+        public int Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((ParadasWS[])(this.results[0]));
+                return ((int)(this.results[0]));
             }
         }
     }
@@ -1794,33 +1718,33 @@ namespace PBN.proxibusnicweb {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void ListarBusParadaCompletedEventHandler(object sender, ListarBusParadaCompletedEventArgs e);
+    public delegate void CrearUsuarioRolCompletedEventHandler(object sender, CrearUsuarioRolCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ListarBusParadaCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class CrearUsuarioRolCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        internal ListarBusParadaCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        internal CrearUsuarioRolCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
         
         /// <remarks/>
-        public BusParadaWS[] Result {
+        public ResultadoSW Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((BusParadaWS[])(this.results[0]));
+                return ((ResultadoSW)(this.results[0]));
             }
         }
     }
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void ListarUsuariosCompletedEventHandler(object sender, ListarUsuariosCompletedEventArgs e);
+    public delegate void LoginCompletedEventHandler(object sender, LoginCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]

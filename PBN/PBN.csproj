@@ -68,7 +68,6 @@
     <Compile Include="AccionesActivity.cs" />
     <Compile Include="AdapterBus.cs" />
     <Compile Include="AdapterParada.cs" />
-    <Compile Include="AdapterParadas.cs" />
     <Compile Include="AgregarBusActivity.cs" />
     <Compile Include="AgregarComentarioActivity.cs" />
     <Compile Include="AgregarParadaActivity.cs" />
@@ -79,6 +78,7 @@
     <Compile Include="EditarBusActivity.cs" />
     <Compile Include="EditarParadaActivity.cs" />
     <Compile Include="ListaParadaActivity.cs" />
+    <Compile Include="ListaSugerenciaActivity.cs" />
     <Compile Include="LoginActivity.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="ParadaActivity.cs" />
@@ -565,6 +565,9 @@
     <AndroidResource Include="Resources\drawable-xxxhdpi\cancelar.png" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Ruta.png" />
+  </ItemGroup>
+  <ItemGroup>
     <AndroidResource Include="Resources\layout\ActivityEditarParada.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
@@ -580,46 +583,9 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\camara.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\galeria.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\camara.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\galeria.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxxhdpi\camara.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxxhdpi\galeria.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxhdpi\camara.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxhdpi\galeria.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxhdpi\notificaciones.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xhdpi\camara.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xhdpi\galeria.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xhdpi\notificaciones.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable-mdpi\camara.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable-mdpi\galeria.png" />
+    <AndroidResource Include="Resources\layout\ActivityListaComentario.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

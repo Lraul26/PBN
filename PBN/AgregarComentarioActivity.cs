@@ -15,14 +15,13 @@ namespace PBN
     [Activity(Label = "AgregarComentarioActivity")]
     public class AgregarComentarioActivity : Activity
     {
-        proxibusnicweb.ProxiBusNicWS db = new proxibusnicweb.ProxiBusNicWS();
-        proxibusnicweb.ParadasWS paradaSeleccionada = null;
+
         proxibusnicweb.ProxiBusNicWS service = new proxibusnicweb.ProxiBusNicWS();
         proxibusnicweb.SugerenciaWS sugerencia = new proxibusnicweb.SugerenciaWS();
         ListView lvparada;
         EditText comentarios;
         ImageButton Aceptar, Cancelar;
-       // int positions = -1;
+        int positions = -1;
         List<string> lparada;
         List<int> idparada;
         ArrayAdapter _adapter;
@@ -38,11 +37,7 @@ namespace PBN
             Aceptar = FindViewById<ImageButton>(Resource.Id.bntAceptar);
             Cancelar = FindViewById<ImageButton>(Resource.Id.btnCancelar);
 
-            lvparada.Adapter = new AdapterParadas(this,db.ListarParada().ToList());
             lvparada.ItemClick += Lvparada_ItemClick;
-            
-
-
             Aceptar.Click += Aceptar_Click;
             Cancelar.Click += Cancelar_Click;
 
@@ -59,12 +54,11 @@ namespace PBN
         {
             if (Validar())
             {
-                //sugerencia.ParadaId = positions;
+                sugerencia.ParadaId = positions;
                 sugerencia.DescripcionSugerencia = comentarios.Text;
-                sugerencia.UsuarioCreacion = Global.Usuario.correo;
-                sugerencia.ParadaId = paradaSeleccionada.Id;
-                service.AgregarSugerencia(sugerencia);
-                Toast.MakeText(Application.Context, "Registro de comentario Exitoso", ToastLength.Short).Show();
+                sugerencia.UsuarioCreacion = "admin@gmail.com";
+
+                Toast.MakeText(Application.Context, "Registro de comentario Exitoso" + service.AgregarSugerencia(sugerencia), ToastLength.Short).Show();
                 limpiar();
             }
         }
@@ -84,10 +78,8 @@ namespace PBN
             lvparada.ChoiceMode = ChoiceMode.Multiple;
         }
         private void Lvparada_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
-        { 
-           paradaSeleccionada= db.ListarParada().ToList()[e.Position];
-            Toast.MakeText(Application.Context, "se seleccionó "+ paradaSeleccionada.Descripcion, ToastLength.Short).Show();
-
+        {
+            positions = e.Position;
         }
         private bool Validar()
         {
@@ -96,7 +88,7 @@ namespace PBN
                 Toast.MakeText(Application.Context, "Ingrese un Comentario", ToastLength.Short).Show();
                 return false;
             }
-            if (paradaSeleccionada == null)
+            if (positions == -1)
             {
                 Toast.MakeText(Application.Context, "Seleccione una Parada", ToastLength.Short).Show();
                 return false;
@@ -106,7 +98,7 @@ namespace PBN
         private void limpiar()
         {
             comentarios.Text = String.Empty;
-           // positions = -1;
+            positions = -1;
         }
     }
 }
